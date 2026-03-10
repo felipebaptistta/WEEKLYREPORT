@@ -15,7 +15,7 @@ What it does:
     - Skips files that have already been converted (checks reports_clean/)
     - Converts each new file to markdown
     - Saves the result as <original_filename>.md in reports_clean/
-    - Logs progress and any errors to logs/convert_reports.log
+    - Logs progress and any errors to logs/conversion.log
 """
 
 import logging
@@ -37,7 +37,7 @@ SUPPORTED_EXTENSIONS = {".pdf", ".docx"}
 # ── Logging setup ─────────────────────────────────────────────────────────────
 
 LOG_DIR.mkdir(exist_ok=True)
-log_file = LOG_DIR / "convert_reports.log"
+log_file = LOG_DIR / "conversion.log"
 
 logging.basicConfig(
     level=logging.INFO,
