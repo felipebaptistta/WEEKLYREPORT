@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Reports and generated files (large binary files; add manually if desired)
+reports_raw/*.pdf
+reports_raw/*.docx
+
+# Output drafts (keep locally, not in git)
+output/
+
+# Logs (keep locally, not in git)
+logs/*.log
+logs/*_llm_response.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

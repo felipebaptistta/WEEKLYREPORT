@@ -1,0 +1,27 @@
+# WEEKLYREPORT — Python dependencies
+# Install with: pip install -r requirements.txt
+#
+# Python 3.9 or later required.
+
+# ── Document conversion ───────────────────────────────────────────────────────
+# MarkItDown: converts PDF and DOCX files to markdown text.
+# Used by: scripts/convert_reports.py
+markitdown[all]>=0.1.0
+
+# ── Text processing ───────────────────────────────────────────────────────────
+# (The standard library re and pathlib modules are used for cleaning;
+#  no extra packages needed for scripts/clean_reports.py at this stage.)
+
+# ── Optional: LLM integration (uncomment when ready) ─────────────────────────
+# Choose one provider when you are ready to activate generate_report.py:
+
+# Option A — Anthropic Claude API
+# anthropic>=0.40.0
+
+# Option B — OpenAI API
+# openai>=1.0.0
+
+# Option C — Ollama runs locally, no pip package needed.
+# Just install Ollama from https://ollama.com and pull a model.
+# The requests library is used to call it:
+# requests>=2.31.0
