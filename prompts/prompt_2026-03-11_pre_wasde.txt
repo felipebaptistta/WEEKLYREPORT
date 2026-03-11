@@ -144,7 +144,7 @@ Your report must NOT:
 The reference reports provided are examples of the desired tone and structure only.
 Your report must be based entirely on the weekly data provided.
 
-=== HISTORICAL REFERENCE REPORTS — POST_WASDE (STYLE AND STRUCTURE ONLY) ===
+=== HISTORICAL REFERENCE REPORTS — PRE_WASDE (STYLE AND STRUCTURE ONLY) ===
 THESE REPORTS ARE STYLE REFERENCES ONLY.
 They are ordered by relevance: same-type reports (matching this report's mode)
 appear first, followed by recent reports for narrative continuity.
@@ -2889,11 +2889,15 @@ ROLE OF THE REFERENCE REPORTS:
 ════════════════════════════════════════════════════════
 
 
-THIS IS A POST-WASDE REPORT.
-The USDA WASDE report was released this week. It is the primary market event.
-Each commodity deep dive must include a 'Post-WASDE Balance Sheet' subsection
-as its first paragraph. The 'Key Fundamentals & Reports' section must include
-a 'USDA WASDE' subsection as its first paragraph.
+THIS IS A PRE-WASDE REPORT.
+The USDA WASDE report is due to be released next week.
+Markets are positioning ahead of it.
+Do NOT include a 'Post-WASDE Balance Sheet' subsection in any deep dive.
+Do NOT include a 'USDA WASDE' subsection in Key Fundamentals & Reports.
+In the deep dives, replace 'Post-WASDE Balance Sheet' with a 'WASDE Setup'
+subsection that states: trade consensus expectations for this commodity,
+the key unknown, what a bullish surprise looks like, what a bearish surprise
+looks like, and which specific number the market will focus on.
 
 ════════════════════════════════════════════════════════
 REQUIRED REPORT STRUCTURE — ENFORCED
@@ -2947,14 +2951,6 @@ SECTION DETAIL — write each section exactly as specified below.
 
 2. Corn Market Deep Dive
 
-   Post-WASDE Balance Sheet — one paragraph.
-     This subsection appears ONLY in post-WASDE reports.
-     Summarize the key USDA WASDE changes for this commodity: the new
-     ending stocks estimate, the change from the prior WASDE, the pre-report
-     trade expectation, and whether the print was bullish or bearish vs.
-     that expectation. State the immediate price reaction with exact figures.
-     Integrate the balance sheet shift with the price behavior.
-
    Futures & Spreads — one paragraph.
      State the front-month close, the weekly move in cents and percent,
      and the carry structure. Express every calendar spread as a dollar
@@ -2995,14 +2991,6 @@ SECTION DETAIL — write each section exactly as specified below.
      end-user. Name the operator type. State what they should do or watch
      for, grounded in this week's specific data. Do not be generic.
 3. Soybean Market Deep Dive
-
-   Post-WASDE Balance Sheet — one paragraph.
-     This subsection appears ONLY in post-WASDE reports.
-     Summarize the key USDA WASDE changes for this commodity: the new
-     ending stocks estimate, the change from the prior WASDE, the pre-report
-     trade expectation, and whether the print was bullish or bearish vs.
-     that expectation. State the immediate price reaction with exact figures.
-     Integrate the balance sheet shift with the price behavior.
 
    Futures & Spreads — one paragraph.
      State the front-month close, the weekly move in cents and percent,
@@ -3049,14 +3037,6 @@ SECTION DETAIL — write each section exactly as specified below.
      end-user. Name the operator type. State what they should do or watch
      for, grounded in this week's specific data. Do not be generic.
 4. Wheat Market Deep Dive
-
-   Post-WASDE Balance Sheet — one paragraph.
-     This subsection appears ONLY in post-WASDE reports.
-     Summarize the key USDA WASDE changes for this commodity: the new
-     ending stocks estimate, the change from the prior WASDE, the pre-report
-     trade expectation, and whether the print was bullish or bearish vs.
-     that expectation. State the immediate price reaction with exact figures.
-     Integrate the balance sheet shift with the price behavior.
 
    Futures & Spreads — one paragraph.
      State the front-month close, the weekly move in cents and percent,
@@ -3137,11 +3117,6 @@ SECTION DETAIL — write each section exactly as specified below.
 7. Key Fundamentals & Reports
 
    Each subsection must be one paragraph. Do not use bullets inside paragraphs.
-
-   USDA WASDE [POST-WASDE REPORTS ONLY] — summarize the WASDE release at the
-     report level (not per-commodity; those details belong in the deep dives).
-     State the overall tone (bullish, bearish, neutral), which commodity
-     surprised most vs. expectations, and the aggregate market reaction.
 
    Export Inspections — weekly total across all grains; compare to prior week
      and prior year; highlight any single-commodity standout.
