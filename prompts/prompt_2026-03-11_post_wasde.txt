@@ -1,51 +1,167 @@
-# Selected Reports — Style Reference
-# Generated: 2026-03-11 11:00:18
+=== STYLE GUIDE ===
+# HigbyBarrett Weekly Report — Style Guide
 
-## Classification Summary
+This guide describes the writing style found in historical HigbyBarrett weekly
+commodity market reports. Use it when generating new reports to match the
+publication's established voice, structure, and analytical approach.
 
-- post_wasde: 6 report(s)
-- pre_wasde: 11 report(s)
-- weekly: 8 report(s)
+---
 
-## Full Archive Classification (chronological)
+## Tone
 
-- 2025-09-04  [pre_wasde   ]  HigbyBarrett Weekly Report Sep 4, 2025.md
-- 2025-09-10  [pre_wasde   ]  HigbyBarrett Weekly Report Sep 10, 2025- Felipe.docx - Documentos Google small.md
-- 2025-09-17  [post_wasde  ]  HigbyBarrett Weekly Report Sep 17, 2025- Felipe.docx - Documentos Google small.md
-- 2025-09-24  [weekly      ]  HigbyBarrett Weekly Report Sep 24, 2025-1-11.md
-- 2025-10-01  [pre_wasde   ]  HigbyBarrett Weekly Report Oct 01, 2025-1-11.md
-- 2025-10-09  [pre_wasde   ]  HigbyBarrett Weekly Report Oct 09, 2025-1-11.md
-- 2025-10-16  [post_wasde  ]  HigbyBarrett Weekly Report Oct 16, 2025 (1)-1-11.md
-- 2025-10-22  [weekly      ]  HigbyBarrett Weekly Report Oct 22, 2025-1-11.md
-- 2025-10-30  [weekly      ]  HigbyBarrett Weekly Report Oct 30, 2025-1-11.md
-- 2025-11-05  [pre_wasde   ]  HigbyBarrett Weekly Report Nov 5, 2025 - Felipe-1-13.md
-- 2025-11-12  [pre_wasde   ]  HigbyBarrett Weekly Report Nov 12, 2025 - Felipe-1-13.md
-- 2025-11-20  [post_wasde  ]  HigbyBarrett Weekly Report Nov 20, 2025 - Felipe.md
-- 2025-12-04  [pre_wasde   ]  HigbyBarrett Weekly Report Dec 4, 2025 - Felipe.md
-- 2025-12-10  [post_wasde  ]  HigbyBarrett Weekly Report Dec 10, 2025 - Felipe.md
-- 2025-12-17  [weekly      ]  HigbyBarrett Weekly Report Dec 17, 2025 - Felipe.md
-- 2026-01-01  [pre_wasde   ]  HigbyBarrett Weekly Report Jan 01, 2026 - Felipe.md
-- 2026-01-08  [pre_wasde   ]  HigbyBarrett Weekly Report Jan 08, 2026 - Felipe.md
-- 2026-01-15  [post_wasde  ]  HigbyBarrett Weekly Report Jan 15, 2026 - Felipe.md
-- 2026-01-22  [weekly      ]  HigbyBarrett Weekly Report Jan 22, 2026 - Felipe.md
-- 2026-01-30  [weekly      ]  HigbyBarrett Weekly Report Jan 30, 2026 - Felipe.md
-- 2026-02-05  [pre_wasde   ]  HigbyBarrett Weekly Report Fev 05, 2026 .md
-- 2026-02-12  [post_wasde  ]  HigbyBarrett Weekly Report Fev 12, 2026 .md
-- 2026-02-19  [weekly      ]  HigbyBarrett Weekly Report Fev 19, 2026 .md
-- 2026-02-26  [weekly      ]  HigbyBarrett Weekly Report Fev 26, 2026 .md
-- 2026-03-05  [pre_wasde   ]  HigbyBarrett Weekly Report Mar 05, 2026 - Felipe.md
+**Analytical and confident.** Every paragraph makes a claim and supports it
+with data. The writer does not hedge with vague language ("prices were mixed",
+"sentiment was cautious"). Instead: name the direction, cite the number, and
+explain the cause.
 
-## Selected for: post_wasde  (top 3)
+**Narrative, not a list.** Sections are written in full paragraphs that build
+on each other. Bullet points appear only in forward-looking watchlists, not in
+analysis. The reader should feel they are following a line of argument, not
+scanning a fact sheet.
 
-- 2026-02-12  HigbyBarrett Weekly Report Fev 12, 2026 .md
-- 2026-01-15  HigbyBarrett Weekly Report Jan 15, 2026 - Felipe.md
-- 2025-12-10  HigbyBarrett Weekly Report Dec 10, 2025 - Felipe.md
+**Institutional in register.** The implied reader is a commodity trader,
+merchandiser, or analyst. Technical terms (basis, carry, FOB, MMT, bbu, WASDE,
+CFTC managed money) are used without definition. Hedging language is used only
+when genuine uncertainty exists.
 
-=== REPORT START ===
-DATE: 2026-02-12
-REPORT_TYPE: post_wasde
-SOURCE_FILE: HigbyBarrett Weekly Report Fev 12, 2026 .md
+---
 
+## Report Structure
+
+Reports follow a consistent section order. Not every section appears in every
+issue, but the sequence is stable:
+
+1. **Executive Summary** — one tight paragraph per commodity (corn, soybeans,
+   wheat). Leads with the most important development of the week. States the
+   net price direction and the primary driver. Written to stand alone.
+
+2. **Macro / Policy** — dollar index, crude oil, interest rates, government
+   policy (USDA shutdowns, export tax changes). Frames the macro backdrop
+   before moving into fundamentals.
+
+3. **Weather** — U.S. crop conditions and harvest pace; South American planting
+   progress. Uses USDA Crop Progress data directly. Identifies the key
+   regional risk (drought, planting delay, frost).
+
+4. **What's Next / Watchlist** — forward-looking. Lists upcoming reports and
+   events (WASDE, Export Sales, Crop Progress) and explains what to watch for
+   in each. Written in short, direct sentences.
+
+5. **Futures & Spreads tables** — CME front-month prices with week-over-week
+   change, percent change, calendar spreads, and percent of full carry.
+   International futures (Dalian, Euronext, B3) included when relevant.
+
+6. **Commodity Deep Dives** — one section per commodity. Covers:
+   - Futures & Spreads: price level, weekly move, carry structure, implied vol
+   - Funds & Positioning: CFTC managed money net position direction and trend
+   - Cash & Basis: interior bids, river markets, processor bids, Gulf CIF
+   - Export Flows / Trade: weekly inspections and sales, key destination countries
+   - International Competition: Brazil FOB, Argentina FOB, Black Sea FOB prices
+   - **So What?** — a closing paragraph that synthesises the section into one
+     clear market implication for a commercial operator
+
+7. **U.S. Cash Market & Basis** — cross-commodity basis overview: river markets
+   vs. inland processors. Explains the split between export channels and
+   domestic demand.
+
+8. **International Cash & Trade Flows** — country-by-country: Brazil, Argentina,
+   China, Black Sea, EU, other origins. Each paragraph covers price levels,
+   policy context, and trade flow implications.
+
+9. **Key Fundamentals & Reports** — detailed review of government reports
+   released during the week (USDA Grain Stocks, WASDE, Crop Progress, Export
+   Inspections, Export Sales, EIA Ethanol). Each sub-section names the report,
+   states the key figure, and compares it to expectations and last year.
+
+10. **Synthesis & Outlook** — ties all commodities together. States the base
+    case (expected price range and market structure), then lists specific
+    bullish and bearish triggers. Ends with a one-paragraph summary verdict.
+
+---
+
+## Analytical Conventions
+
+**Spreads and carry** are always expressed as a percentage of full carry, not
+just as a dollar amount. Full carry is calculated at 7% annual interest plus
+storage/insurance costs. This gives readers an instant read on whether the
+market is rewarding storage or pushing grain to move.
+
+**Basis** is reported as cents over or under the nearby futures contract. The
+report distinguishes river/export basis from inland processor basis — these
+often move in opposite directions and tell different stories.
+
+**Export data** uses MMT (million metric tons) and bbu (billion bushels) as
+appropriate. Weekly inspections and cumulative sales are compared to the same
+period last year and to USDA's annual export target.
+
+**Price comparisons** between origins (U.S. Gulf FOB vs. Brazil Santos FOB vs.
+Argentina Up-River FOB vs. Russia Black Sea FOB) are central to the export
+analysis. The report always explains *why* one origin is winning business.
+
+**"So What?"** is the most important paragraph in each section. It translates
+market mechanics into a clear implication for a commercial operator: what
+should a merchandiser, elevator, or processor do (or watch for) given this
+week's information?
+
+---
+
+## What a New Report Must Do
+
+- Lead each commodity section with the most important fact, not background
+- State every price move with its magnitude (e.g. "fell 2.5 percent to $5.09/bu")
+- Compare current data to expectations AND to the same period last year
+- Name the countries, companies, or policy actions driving trade flows
+- End every major section with a "So What?" paragraph
+- Close with a Synthesis that gives a base-case price range and names specific
+  triggers that would break the range in either direction
+- Use current weekly data exclusively — do not import narrative from past reports
+
+## What a New Report Must Not Do
+
+- Copy sentences or phrases from historical reports in the style corpus
+- Use vague directional language without a number attached
+- Substitute bullet lists for analytical paragraphs in body sections
+- Speculate beyond what the data in weekly_data/ supports
+- Repeat the same observation in multiple sections without adding new information
+
+=== WRITING INSTRUCTIONS ===
+You are an expert commodity market analyst writing a professional weekly report.
+
+Your report must:
+- Be written in a confident, analytical, and narrative style
+- Tell a coherent story about what happened in the commodity markets this week
+- Explain causes and effects, not just list price movements
+- Use precise commodity terminology and market references
+- Be structured with clear sections (e.g. Overview, Key Movers, Outlook)
+- Be concise — no filler, no repetition, no generic disclaimers
+
+Your report must NOT:
+- Copy sentences or phrases from the reference reports provided
+- Use bullet-point lists as a substitute for analysis
+- Use vague language ("prices were mixed", "sentiment was cautious")
+- Speculate beyond what the data supports
+
+The reference reports provided are examples of the desired tone and structure only.
+Your report must be based entirely on the weekly data provided.
+
+=== HISTORICAL REFERENCE REPORTS — POST_WASDE (STYLE AND STRUCTURE ONLY) ===
+THESE REPORTS ARE STYLE REFERENCES ONLY.
+They are ordered by relevance: same-type reports (matching this report's mode)
+appear first, followed by recent reports for narrative continuity.
+
+Permitted use:
+  ✓ Observe the section sequence and depth of analysis
+  ✓ Absorb the analytical register and institutional voice
+  ✓ Note how 'So What?' paragraphs are structured as commercial implications
+  ✓ Understand how spreads, basis, and carry are explained together
+
+Prohibited use:
+  ✗ Do NOT copy sentences, transitions, openings, or closings
+  ✗ Do NOT mirror a reference report's paragraph sequence with new numbers
+  ✗ Do NOT use any number or data point from these reports
+  ✗ Do NOT reuse 'So What?' conclusions even in paraphrase
+
+--- REFERENCE REPORT: HigbyBarrett Weekly Report Fev 12, 2026 .md ---
 Weekly Insights | Feb 12, 2026
 
 Item
@@ -878,14 +994,9 @@ Brazil’s crop is institutionally embedded, Russia’s export regime remains op
 stable, and Argentina has not yet introduced official downgrades. Physical signals, basis behavior, spread
 structure, shipment pace, and positioning, now serve as the clearest guideposts for price discovery. Risk
 remains asymmetrical. Upside requires disruption. Downside requires demand erosion. Until either
+--- END REFERENCE REPORT ---
 
-=== REPORT END ===
-
-=== REPORT START ===
-DATE: 2026-01-15
-REPORT_TYPE: post_wasde
-SOURCE_FILE: HigbyBarrett Weekly Report Jan 15, 2026 - Felipe.md
-
+--- REFERENCE REPORT: HigbyBarrett Weekly Report Jan 15, 2026 - Felipe.md ---
 Weekly Insights | Jan 08, 2026
 
 Item
@@ -1652,14 +1763,9 @@ those conditions materializes, markets are likely to remain range-bound, discipl
 commercial rather than speculative conviction.
 
 Ethanol for America Act
+--- END REFERENCE REPORT ---
 
-=== REPORT END ===
-
-=== REPORT START ===
-DATE: 2025-12-10
-REPORT_TYPE: post_wasde
-SOURCE_FILE: HigbyBarrett Weekly Report Dec 10, 2025 - Felipe.md
-
+--- REFERENCE REPORT: HigbyBarrett Weekly Report Dec 10, 2025 - Felipe.md ---
 Weekly Insights | Nov 20, 2025
 
 Item
@@ -2395,5 +2501,403 @@ that continues to run firmer than the board. Corn’s front end held strong on e
 soybeans stayed supported nearby despite weaker futures, and wheat avoided further downside thanks
 to steady U.S execution. With South American weather now the main driver and Chinese demand still
 uneven, the next move hinges on logistics and rainfall rather than anything left in the WASDE tables.
+--- END REFERENCE REPORT ---
 
-=== REPORT END ===
+=== WEEKLY MARKET DATA (USE THIS TO WRITE THE REPORT) ===
+--- DATA FILE: basis.md ---
+# U.S. Cash Basis — Week of 2026-03-11
+
+All basis quoted vs. nearby futures contract.
+
+## Corn
+
+| Location              | Basis        | Change wk/wk |
+|-----------------------|--------------|--------------|
+| CIF New Orleans (Gulf)| -14¢ May     | +4¢ (firmer) |
+| Illinois River (Cairo)| -26¢ May     | +2¢          |
+| Iowa ethanol plant    | +6¢ May      | unchanged    |
+| Kansas feedlot (KS)   | -18¢ May     | -2¢          |
+
+Gulf corn basis firmed sharply this week on a pickup in export barge demand.
+Illinois River basis followed Gulf higher. Ethanol plant bids remain firm on thin
+local corn availability.
+
+## Soybeans
+
+| Location               | Basis         | Change wk/wk |
+|------------------------|---------------|--------------|
+| CIF New Orleans (Gulf) | -38¢ May      | -3¢ (weaker) |
+| Illinois crush plant   | -22¢ May      | -1¢          |
+| Iowa crush plant       | -19¢ May      | unchanged    |
+
+Gulf soybean basis softened modestly as Brazilian FOB offers continued to undercut
+U.S. Gulf at $1.12–1.18/bu discount. Domestic crush margins remain supportive of
+interior bids.
+
+## Wheat (SRW)
+
+| Location               | Basis         | Change wk/wk |
+|------------------------|---------------|--------------|
+| CIF Gulf (SRW)         | -42¢ May      | -5¢ (weaker) |
+| Ohio River (Cincinnati)| -35¢ May      | -3¢          |
+| Midwest flour mill     | -28¢ May      | -2¢          |
+
+SRW Gulf basis deteriorated on continued competition from Black Sea and EU origins.
+Flour mill bids softened in step with weaker futures.
+--- END DATA FILE ---
+
+--- DATA FILE: cftc.md ---
+# CFTC Commitments of Traders — Managed Money Positioning
+# Data as of Tuesday, 2026-03-03 (released Friday, 2026-03-07)
+
+## Corn
+- Net position:       SHORT  108,400 contracts
+- Change on week:     added 9,200 contracts to short  (increased bearish bet)
+- 4-week trend:       funds have been sellers every week for the past four weeks
+- Context:            largest managed money short since November 2025
+
+## Soybeans
+- Net position:       SHORT  41,600 contracts
+- Change on week:     covered 3,800 contracts (mild short-covering)
+- 4-week trend:       oscillating between 38K–50K short; no sustained directional bias
+- Context:            short position is large but not at historical extremes
+
+## Wheat (CBOT SRW)
+- Net position:       SHORT  74,200 contracts
+- Change on week:     added 2,100 contracts to short
+- 4-week trend:       steady selling; funds have not held a net long in SRW since July 2025
+- Context:            near the largest speculative short of the current marketing year
+
+## Wheat (KCBT HRW)
+- Net position:       SHORT  22,800 contracts
+- Change on week:     roughly unchanged (-400 contracts)
+
+## Summary
+Managed money remains heavily positioned short across all three commodities. This sets up
+a potentially sharp short-covering rally if bullish data emerges (lower-than-expected
+WASDE stocks, weather disruption, or surge in Chinese buying). The crowded short in corn
+is the most acute risk.
+--- END DATA FILE ---
+
+--- DATA FILE: exports.md ---
+# Export Inspections & Sales — Week of 2026-03-11
+
+## USDA Weekly Export Inspections (week ending 2026-03-05)
+
+### Corn
+- Weekly inspections:     1.214 MMT   (prior week: 1.089 MMT; prior year: 1.342 MMT)
+- Cumulative YTD:         22.4 MMT
+- USDA annual target:     63.5 MMT    (35% of target shipped with ~28 weeks remaining)
+- Top destinations:       Mexico (0.31 MMT), Japan (0.22 MMT), South Korea (0.18 MMT)
+
+Inspections rebounded from a soft prior week but remain below the year-ago pace needed
+to meet the annual target. Mexico remains the dominant buyer of U.S. corn.
+
+### Soybeans
+- Weekly inspections:     0.842 MMT   (prior week: 0.914 MMT; prior year: 0.773 MMT)
+- Cumulative YTD:         38.7 MMT
+- USDA annual target:     52.2 MMT    (74% of target shipped — ahead of pace)
+- Top destinations:       China (0.41 MMT), Unknown (0.19 MMT), Netherlands (0.09 MMT)
+
+Soybean inspections remain solid relative to last year. China continued buying at a
+measured pace despite Brazilian competition. The YTD pace is comfortable vs. the USDA
+target but expected to slow materially as Brazilian harvest accelerates.
+
+### Wheat
+- Weekly inspections:     0.378 MMT   (prior week: 0.291 MMT; prior year: 0.412 MMT)
+- Cumulative YTD:         17.6 MMT
+- USDA annual target:     23.4 MMT    (75% of target shipped — on pace)
+- Top destinations:       Philippines (0.11 MMT), Mexico (0.09 MMT), Nigeria (0.07 MMT)
+
+Wheat inspections improved from the prior week but remain below year-ago. Black Sea
+origins continue to compete aggressively, limiting U.S. market share in key destinations.
+
+## USDA Weekly Export Sales (week ending 2026-02-27, most recent available)
+
+### Corn
+- Net new sales:  892,000 MT    (within market expectations of 700K–1.1 MMT)
+
+### Soybeans
+- Net new sales:  411,000 MT    (below expectations of 450K–700K MT)
+
+### Wheat
+- Net new sales:  263,000 MT    (in line with expectations)
+--- END DATA FILE ---
+
+--- DATA FILE: market_prices.md ---
+# Market Prices — Week of 2026-03-11
+
+## CME Futures Closing Prices (Friday, 2026-03-07)
+
+### Corn
+- May '26:  $4.42/bu    -$0.11  (-2.4%)  wk/wk
+- Dec '26:  $4.51/bu    -$0.09  (-2.0%)  wk/wk
+
+### Soybeans
+- May '26:  $9.84/bu    -$0.18  (-1.8%)  wk/wk
+- Nov '26:  $9.71/bu    -$0.14  (-1.4%)  wk/wk
+
+### Wheat (SRW Chicago)
+- May '26:  $5.32/bu    -$0.04  (-0.7%)  wk/wk
+- Jul '26:  $5.41/bu    -$0.03  (-0.6%)  wk/wk
+
+### Wheat (HRW Kansas City)
+- May '26:  $5.58/bu    -$0.06  (-1.1%)  wk/wk
+
+## International Futures
+
+- Dalian Corn (May):      ¥2,264/MT  (~$7.81/bu)   -0.6% wk/wk
+- Euronext Wheat (May):   €196.50/MT (~$214/MT)     -1.2% wk/wk
+- B3 Soybean (May):       R$123.40/bag (~$9.54/bu)  -0.9% wk/wk
+--- END DATA FILE ---
+
+--- DATA FILE: notes.md ---
+# Analyst Notes — Week of 2026-03-11
+
+## Key Narrative
+The March WASDE delivered a broadly bearish message across the grain complex. The market
+had already priced in unchanged U.S. corn stocks, but the larger-than-expected world
+corn and soybean ending stocks figures — driven by upward revisions to Brazilian production
+— gave bears fresh ammunition heading into the weekend.
+
+Funds had already been selling aggressively in corn (now net short 108,400 contracts —
+the largest bearish bet since November 2025), yet prices did not collapse after WASDE.
+The muted downside response in corn after a bearish report is worth noting: it may
+indicate that much of the bearish supply story is already priced in.
+
+## Corn
+- Export pace is lagging the annual target, but this week's inspections (1.214 MMT) were
+  a meaningful step in the right direction. Mexico continues to be the anchor buyer.
+- Gulf basis firmed +4¢ this week — a countertrend move vs. the weaker futures. Watch
+  whether this reflects genuine demand or just short-term logistical noise.
+- Dec/Mar carry at 76% of full carry is not a green light to store aggressively.
+
+## Soybeans
+- Brazil's harvest at 71% complete and running ahead of schedule is the dominant bearish
+  overhang. Every week of smooth harvest progress further undermines U.S. export demand.
+- The surprise in Nov soybean ending stocks (+10 mbu vs. expectations) combined with the
+  world stocks beat (-9¢ reaction in Nov soybeans) confirms the market is in price-
+  rationing mode: lower prices are needed to stimulate demand or cut planted area.
+- Crush margins are still supportive of domestic processing demand; this is the one
+  bullish counterweight to the export headwinds.
+
+## Wheat
+- Southern Plains dryness is the one genuine weather risk in the complex right now.
+  Kansas topsoil at 41% short/very short is not yet at crisis levels but warrants
+  close monitoring through the March/April green-up period.
+- Black Sea and EU competition continues to shut U.S. wheat out of traditional markets.
+  U.S. Gulf SRW basis at -42¢ under May is already at a significant discount but still
+  not cheap enough to displace Black Sea origin into Asia.
+- Fund short in SRW (74,200 contracts) is crowded. A crop-threatening weather event in
+  Kansas could trigger violent short-covering.
+
+## Cross-Commodity Themes
+- Dollar index (DXY) at 104.2, little changed on the week. A sustained dollar move above
+  106 would add further headwind to U.S. export competitiveness.
+- Crude oil (WTI) at $72.40/bbl, down $1.80 on the week. Lower energy reduces ethanol
+  margin support for corn.
+- No major U.S. policy developments this week affecting the grain complex.
+--- END DATA FILE ---
+
+--- DATA FILE: spreads.md ---
+# Calendar Spreads & Carry — Week of 2026-03-11
+
+Full carry assumptions: 7% annual interest + $0.05/bu/month storage + insurance.
+
+## Corn
+- May/Jul '26:    +$0.09   (41% of full carry)   — tighter than +$0.12 last week
+- Jul/Dec '26:    +$0.18   (68% of full carry)
+- Dec/Mar '27:    +$0.20   (76% of full carry)
+
+Interpretation: nearby spread compression reflects short-term export demand pulling on
+old-crop. Deferred carry remains well-offered, indicating the market is comfortable
+storing new-crop corn.
+
+## Soybeans
+- May/Jul '26:    +$0.10   (52% of full carry)   — roughly unchanged wk/wk
+- Nov/Jan '27:    +$0.17   (79% of full carry)
+- Jan/Mar '27:    +$0.13   (72% of full carry)
+
+Interpretation: new-crop curve is near full carry, consistent with ample South American
+supply competing against U.S. origin into late 2026.
+
+## Wheat (SRW)
+- May/Jul '26:    +$0.11   (58% of full carry)
+- Jul/Dec '26:    +$0.23   (86% of full carry)
+
+Interpretation: wheat curve is the most inverted-relative-to-carry of the three
+commodities. Deferred carry widening to 86% of full suggests the market is pricing
+adequate new-crop supply with no urgency to move wheat now.
+--- END DATA FILE ---
+
+--- DATA FILE: wasde.md ---
+# USDA WASDE — March 2026 Release (2026-03-10)
+
+## CORN — U.S. Balance Sheet
+
+| Item                  | Feb WASDE   | Mar WASDE   | Trade Exp.  | Change      |
+|-----------------------|-------------|-------------|-------------|-------------|
+| Production (bbu)      | 15.143      | 15.143      | 15.143      | unchanged   |
+| Exports (bbu)         | 2.325       | 2.275       | 2.300       | -50 mbu     |
+| Feed & Residual (bbu) | 5.750       | 5.800       | 5.760       | +50 mbu     |
+| Ending Stocks (bbu)   | 1.540       | 1.540       | 1.510       | unchanged   |
+| Stocks/Use ratio      | 10.2%       | 10.2%       | —           | unchanged   |
+
+World ending stocks: 297.4 MMT (Feb: 295.0 MMT; trade exp: 295.5 MMT) — bearish surprise.
+Market reaction: May corn initially +2¢ on unchanged U.S. stocks; faded to -5¢ by close
+as traders focused on the larger-than-expected world stocks increase (Brazil/Argentina).
+
+## SOYBEANS — U.S. Balance Sheet
+
+| Item                  | Feb WASDE   | Mar WASDE   | Trade Exp.  | Change      |
+|-----------------------|-------------|-------------|-------------|-------------|
+| Crush (mbu)           | 2,390       | 2,400       | 2,390       | +10 mbu     |
+| Exports (mbu)         | 1,925       | 1,875       | 1,900       | -50 mbu     |
+| Ending Stocks (mbu)   | 380         | 390         | 370         | +10 mbu     |
+| Stocks/Use ratio      | 9.8%        | 10.1%       | —           | bearish     |
+
+World ending stocks: 124.8 MMT (Feb: 122.6 MMT; trade exp: 122.0 MMT) — bearish surprise.
+Brazil production raised to 127 MMT (+2 MMT); Argentina held at 49 MMT.
+Market reaction: Nov soybeans -9¢; broke below the prior week's low.
+
+## WHEAT — U.S. Balance Sheet
+
+| Item                  | Feb WASDE   | Mar WASDE   | Trade Exp.  | Change      |
+|-----------------------|-------------|-------------|-------------|-------------|
+| Exports (mbu)         | 825         | 800         | 810         | -25 mbu     |
+| Ending Stocks (mbu)   | 815         | 840         | 820         | +25 mbu     |
+| Stocks/Use ratio      | 35.4%       | 36.5%       | —           | bearish     |
+
+World ending stocks: 260.4 MMT (Feb: 258.7 MMT; trade exp: 258.5 MMT) — bearish.
+Market reaction: May SRW wheat -8¢; set a new contract low.
+
+## Overall WASDE Tone
+Broadly bearish for all three commodities. U.S. corn stocks were in line with expectations
+but world stocks were higher than anticipated. Soybean and wheat both showed higher-than-
+expected ending stocks. The March WASDE reinforced the well-supplied global narrative
+that has pressured prices throughout Q1 2026.
+--- END DATA FILE ---
+
+--- DATA FILE: weather.md ---
+# Weather & Crop Conditions — Week of 2026-03-11
+
+## United States
+
+### Winter Wheat
+- Crop condition (as of 2026-03-08):  44% good/excellent  (vs. 46% last week, vs. 55% last year)
+- Poor/very poor:  21%  (vs. 18% last week)
+- Key concern: persistent dryness across the southern Plains (Kansas, Oklahoma, Texas panhandle).
+  The 7-day forecast shows below-normal precipitation and above-normal temperatures for the
+  hard red winter wheat belt. Topsoil moisture rated 41% short-to-very-short in Kansas.
+- Northern Plains: adequate moisture; soft red winter wheat in the Ohio/Indiana corridor rated
+  58% good/excellent — well above the national average.
+
+### Spring Planting Outlook
+- Too early for corn and soybean planting in most of the Corn Belt.
+- 6–14 day outlook: near-normal temperatures for Iowa, Illinois, Indiana; no significant
+  precipitation threat to delay fieldwork when the season opens.
+
+## South America
+
+### Brazil (Mato Grosso, Paraná, Rio Grande do Sul)
+- Soybean harvest: 71% complete as of 2026-03-07 (vs. 65% last week; vs. 58% same week last year)
+- Harvest pace ahead of average; pod-fill conditions were favorable.
+- Estimated production: 127.8 MMT (CONAB March, in line with USDA's 127 MMT).
+- Second-crop corn (safrinha): planting 96% complete; crop rated mostly in good condition.
+  Key risk: late-planted safrinha in Mato Grosso faces a tighter yield window if dry
+  conditions emerge in April during grain-fill.
+
+### Argentina
+- Corn: 18% harvested; crop rated 41% good/excellent, 27% poor/very poor.
+  Buenos Aires province recovering from February dryness after recent rains (20–40mm),
+  but yield expectations already reduced. BCBA estimate: 49.5 MMT (down from 51 MMT).
+- Soybeans: pod-fill in progress; recent rainfall beneficial but came late for early-planted fields.
+  BCBA estimate: 48.2 MMT.
+--- END DATA FILE ---
+
+=== TASK ===
+You are writing the HigbyBarrett Weekly Commodity Market Report for the week of 2026-03-11.
+
+════════════════════════════════════════════════════════
+CRITICAL RULES — READ THESE BEFORE WRITING A SINGLE WORD
+════════════════════════════════════════════════════════
+
+ANTI-COPYING RULES (absolute — no exceptions):
+- Do NOT copy any sentence, phrase, clause, or transition from any reference report.
+  Not even a partial sentence. Not even paraphrased with the same structure.
+- Do NOT reuse opening sentences. Every section and every paragraph must begin with
+  freshly written sentences that are specific to this week's data and events.
+- Do NOT reuse 'So What?' wording. The conclusion, framing, and commercial implication
+  of every 'So What?' paragraph must be written entirely from scratch.
+- Do NOT mirror any prior report paragraph-by-paragraph, even loosely.
+  Reading a reference and then reproducing its sequence of observations with new numbers
+  is exactly what is forbidden. The argument must grow from this week's data, not be
+  transplanted from a prior week.
+- Do NOT echo the prior week's conclusions or verdicts. If last week's report said the
+  market was 'rangebound with a bearish tilt', and this week that is still true, you must
+  say it differently and justify it with this week's specific evidence.
+- Do NOT recycle the same transitions mechanically. Words like 'Meanwhile', 'Against that
+  backdrop', 'On the cash side', and 'Looking ahead' are legitimate only when they arise
+  naturally from this week's argument — not as slot-fillers borrowed from a prior report.
+- Do NOT import any number, price, or data point from the reference reports.
+  Every figure cited must appear in the weekly data section below.
+
+FRESHNESS RULES:
+- Historical reports are references only. They demonstrate method, voice, and structure.
+  They do not dictate what to write this week. The weekly data does that.
+- The current week's facts must drive every section. If a data point is not in the
+  weekly data below, it does not belong in the report.
+- Repeated wording is unacceptable. Any sentence that could have been lifted verbatim
+  or near-verbatim from a prior report must be rewritten from scratch.
+- The output must sound like the same writer on a new week — same analytical voice,
+  same institutional register, same structural discipline — but with entirely fresh
+  language, fresh transitions, and analysis that belongs only to this week.
+  It should not sound like a paraphrase of last week.
+- Maintain continuity of thought — the reader should recognize the same analyst —
+  but never repeat sentence patterns, structural templates, or verbal formulas.
+- Every section transition must be freshly written for this report.
+- The Synthesis section must open with a sentence that could only have been written
+  this week — referencing a specific event, figure, or shift from the weekly data.
+- The Watchlist must name specific upcoming reports and specific thresholds to watch,
+  drawn entirely from the current market context.
+
+STYLE REQUIREMENTS (preserve these precisely):
+- Analytical and confident: every claim is backed by a specific figure or observable
+  market fact. Never hedge without a reason.
+- Narrative discipline: sections are connected paragraphs that build an argument.
+  Do NOT substitute bullet lists for analytical prose in any body section.
+- Institutional register: technical terms (basis, carry, FOB, MMT, bbu, WASDE,
+  managed money, % of full carry) are used without definition.
+- 'So What?' discipline: every major commodity section ends with a 'So What?'
+  paragraph that names a clear, direct implication for a commercial operator
+  (merchandiser, elevator, crusher, or end-user).
+- Precise: state price levels, percent changes, spread widths, and FOB comparisons
+  with exact values from the data. 'Prices fell' is not acceptable;
+  'December corn fell 2.5 percent to $4.21/bu' is.
+- Cause and effect: always explain why prices moved, not just that they moved.
+
+ROLE OF THE REFERENCE REPORTS:
+- They demonstrate the analytical framework, section depth, and institutional voice.
+- They do not tell you what to write this week. The weekly data does that.
+- Continuity with prior weeks comes from consistent analytical method and structure —
+  not from recycling sentences, transitions, or verdicts.
+- Preserve the analytical voice and structural discipline you see in the references,
+  but generate fresh language every time.
+- Treat the references as a craftsman studies a master's technique: absorb the method,
+  then produce entirely original work.
+
+════════════════════════════════════════════════════════
+
+
+THIS IS A POST-WASDE REPORT.
+The USDA WASDE report was released this week. This is the primary event.
+
+Required structure:
+1. Executive Summary — one paragraph per commodity (corn, soybeans, wheat). Each paragraph must lead with what the WASDE showed vs. expectations, then state the market price reaction with exact figures.
+2. WASDE Balance Sheet Review — for each commodity: key USDA number changes, comparison to pre-report trade expectations, comparison to last year, and which direction the market moved in response.
+3. Post-WASDE Cash & Basis — how interior bids, river basis, and processor bids adjusted in the days following the release.
+4. Export & International Trade — weekly inspections, sales, and origin competition (Brazil FOB, Argentina FOB, Black Sea FOB vs. U.S. Gulf).
+5. Weather & Crop Conditions — U.S. and South America; use Crop Progress data.
+6. Macro & Policy — dollar, crude, interest rates, any policy developments.
+7. Synthesis & Outlook — base-case price ranges for each commodity. Name specific bullish AND bearish triggers. End with a one-paragraph verdict on market structure.
+8. Watchlist — bullet list of next week's key reports and what to watch for in each.

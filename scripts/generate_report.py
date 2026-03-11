@@ -1,30 +1,42 @@
 """
 generate_report.py
 ------------------
-Sends the assembled prompt to an LLM and saves the generated report draft.
+Orchestrates the full report generation pipeline for a given mode and date.
 
-This script is currently a PLACEHOLDER. The LLM integration is not active yet.
-When you are ready to connect an LLM, see the section marked "LLM INTEGRATION"
-below and follow the instructions there.
+In placeholder mode (no LLM connected yet):
+  - Runs select_reports.py to pick the right historical references
+  - Runs build_prompt.py to assemble the full prompt
+  - Saves the prompt to output/<mode>_prompt.txt for review or manual use
 
-Current behaviour (placeholder mode):
-    - Reads the most recent prompt from prompts/
-    - Prints the prompt to the terminal so you can inspect it
-    - Saves a placeholder output file to output/ as a reminder
+When an LLM is connected (see LLM INTEGRATION section below):
+  - Does all of the above, then calls the LLM
+  - Saves the generated report to output/<date>_<mode>_report.md
+  - Saves the raw LLM response to logs/ for debugging
+
+Supported modes:
+    post_wasde  — WASDE was released this week
+    pre_wasde   — WASDE is due next week
+    weekly      — standard mid-cycle report
 
 Usage:
-    python scripts/generate_report.py
-    python scripts/generate_report.py --date 2026-03-10
-    python scripts/generate_report.py --prompt prompts/prompt_2026-03-10.txt
+    python scripts/generate_report.py --mode post_wasde
+    python scripts/generate_report.py --mode pre_wasde
+    python scripts/generate_report.py --mode weekly
+    python scripts/generate_report.py --mode post_wasde --date 2026-03-12
+    python scripts/generate_report.py --mode post_wasde --date 2026-03-12 --data-dir weekly_data/2026-03-12
+    python scripts/generate_report.py --mode post_wasde --n 3
 
-Arguments (all optional):
-    --date    Report date (YYYY-MM-DD). Determines which prompt file to load and
-              how to name the output file. Defaults to today.
-    --prompt  Explicit path to a prompt file (overrides --date).
+Arguments:
+    --mode      Report type: post_wasde | pre_wasde | weekly  (required)
+    --date      Report date YYYY-MM-DD (default: today)
+    --data-dir  Folder with this week's data files
+                (default: weekly_data/<date>/ if it exists, else weekly_data/)
+    --n         Number of historical reference reports to select (default: 3)
 """
 
 import argparse
 import logging
+import subprocess
 import sys
 from datetime import date
 from pathlib import Path
@@ -32,13 +44,17 @@ from pathlib import Path
 # ── Path setup ────────────────────────────────────────────────────────────────
 
 PROJECT_ROOT = Path(__file__).parent.parent
+SCRIPTS_DIR  = PROJECT_ROOT / "scripts"
 PROMPTS_DIR  = PROJECT_ROOT / "prompts"
 OUTPUT_DIR   = PROJECT_ROOT / "output"
 LOG_DIR      = PROJECT_ROOT / "logs"
 
+VALID_MODES = ("post_wasde", "pre_wasde", "weekly")
+
 # ── Logging setup ─────────────────────────────────────────────────────────────
 
 LOG_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR.mkdir(exist_ok=True)
 log_file = LOG_DIR / "generate_report.log"
 
 logging.basicConfig(
@@ -46,168 +62,229 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler(log_file),
-        logging.StreamHandler(sys.stdout)
-    ]
+        logging.StreamHandler(sys.stdout),
+    ],
 )
 log = logging.getLogger(__name__)
 
 
-# ── Prompt loading ────────────────────────────────────────────────────────────
+# ── Pipeline steps ────────────────────────────────────────────────────────────
 
-def find_prompt(report_date: str, explicit_path: str | None) -> Path | None:
+def run_select(mode: str, n: int) -> bool:
     """
-    Locate the prompt file to use.
-
-    Priority:
-      1. Explicit path provided via --prompt argument
-      2. prompts/prompt_<date>.txt
-      3. Most recently modified prompt file in prompts/
-
-    Returns the Path if found, or None if no prompt file is available.
+    Run select_reports.py --mode <mode> --n <n> to update selected_reports.txt.
+    Returns True on success, False on failure.
     """
-    if explicit_path:
-        p = Path(explicit_path)
-        if p.exists():
-            return p
-        else:
-            log.error(f"Prompt file not found: {explicit_path}")
-            return None
+    cmd = [sys.executable, str(SCRIPTS_DIR / "select_reports.py"), "--mode", mode, "--n", str(n)]
+    log.info(f"Running: {' '.join(cmd[1:])}")
+    result = subprocess.run(cmd, cwd=PROJECT_ROOT)
+    if result.returncode != 0:
+        log.error("select_reports.py failed.")
+        return False
+    return True
 
-    # Try the date-based name first
-    dated_file = PROMPTS_DIR / f"prompt_{report_date}.txt"
-    if dated_file.exists():
-        return dated_file
 
-    # Fall back to the most recent prompt file
-    all_prompts = sorted(PROMPTS_DIR.glob("prompt_*.txt"), key=lambda f: f.stat().st_mtime)
-    if all_prompts:
-        fallback = all_prompts[-1]
-        log.warning(f"No prompt for {report_date}. Using most recent: {fallback.name}")
-        return fallback
+def run_build_prompt(mode: str, report_date: str, data_dir: str | None) -> Path | None:
+    """
+    Run build_prompt.py --mode <mode> --date <date> [--data-dir <dir>].
+    Returns the path to the generated prompt file, or None on failure.
+    """
+    cmd = [
+        sys.executable, str(SCRIPTS_DIR / "build_prompt.py"),
+        "--mode", mode,
+        "--date", report_date,
+    ]
+    if data_dir:
+        cmd += ["--data-dir", data_dir]
 
-    log.error("No prompt files found in prompts/. Run build_prompt.py first.")
-    return None
+    log.info(f"Running: {' '.join(cmd[1:])}")
+    result = subprocess.run(cmd, cwd=PROJECT_ROOT)
+    if result.returncode != 0:
+        log.error("build_prompt.py failed.")
+        return None
+
+    prompt_file = PROMPTS_DIR / f"prompt_{report_date}_{mode}.txt"
+    if not prompt_file.exists():
+        log.error(f"Expected prompt file not found: {prompt_file}")
+        return None
+    return prompt_file
 
 
 # ── LLM INTEGRATION ───────────────────────────────────────────────────────────
 #
-# This is where you will add LLM support when you are ready.
+# The LLM is not connected yet. When you are ready, implement call_llm() below.
 #
-# Option A — Local model via Ollama (recommended for local-first setup):
+# Option A — Local model via Ollama (recommended first):
 #
 #   import requests
 #
 #   def call_llm(prompt: str) -> str:
 #       response = requests.post(
 #           "http://localhost:11434/api/generate",
-#           json={"model": "llama3", "prompt": prompt, "stream": False}
+#           json={"model": "llama3", "prompt": prompt, "stream": False},
 #       )
 #       return response.json()["response"]
 #
-# Option B — OpenAI-compatible API:
-#
-#   from openai import OpenAI
-#
-#   def call_llm(prompt: str) -> str:
-#       client = OpenAI()  # reads OPENAI_API_KEY from environment
-#       response = client.chat.completions.create(
-#           model="gpt-4o",
-#           messages=[{"role": "user", "content": prompt}]
-#       )
-#       return response.choices[0].message.content
-#
-# Option C — Anthropic Claude API:
+# Option B — Anthropic Claude API:
 #
 #   import anthropic
 #
 #   def call_llm(prompt: str) -> str:
-#       client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from environment
+#       client = anthropic.Anthropic()   # reads ANTHROPIC_API_KEY from env
 #       message = client.messages.create(
 #           model="claude-opus-4-6",
-#           max_tokens=4096,
-#           messages=[{"role": "user", "content": prompt}]
+#           max_tokens=8096,
+#           messages=[{"role": "user", "content": prompt}],
 #       )
 #       return message.content[0].text
 #
+# Option C — OpenAI-compatible API:
+#
+#   from openai import OpenAI
+#
+#   def call_llm(prompt: str) -> str:
+#       client = OpenAI()                # reads OPENAI_API_KEY from env
+#       response = client.chat.completions.create(
+#           model="gpt-4o",
+#           messages=[{"role": "user", "content": prompt}],
+#       )
+#       return response.choices[0].message.content
+#
 # ─────────────────────────────────────────────────────────────────────────────
 
-def call_llm(prompt: str) -> str:
+def call_llm(prompt: str) -> str | None:
     """
-    Placeholder function. Replace this with a real LLM call when ready.
-    See the LLM INTEGRATION section above for examples.
+    Placeholder — LLM not yet connected.
+    Returns None so the caller knows to skip report generation.
+    Replace this body with a real LLM call when ready.
     """
-    # This is the placeholder — it does not call any model.
-    return (
-        "[PLACEHOLDER OUTPUT — LLM NOT YET CONNECTED]\n\n"
-        "To generate a real report:\n"
-        "1. Choose an LLM provider (Ollama, OpenAI, Anthropic)\n"
-        "2. Replace the body of call_llm() in generate_report.py\n"
-        "3. Run this script again\n\n"
-        "Your prompt has been saved and is ready to send."
-    )
+    return None
 
 
-def save_output(content: str, report_date: str) -> Path:
-    """
-    Save the generated report to output/<date>_report.md.
-    Also saves the raw LLM response to logs/ for debugging.
-    """
-    OUTPUT_DIR.mkdir(exist_ok=True)
+# ── Output ────────────────────────────────────────────────────────────────────
 
-    output_file = OUTPUT_DIR / f"{report_date}_report.md"
-    output_file.write_text(content, encoding="utf-8")
-    log.info(f"Report saved to: {output_file}")
+def save_prompt_to_output(prompt_file: Path, mode: str) -> Path:
+    """
+    Copy the assembled prompt to output/<mode>_prompt.txt.
+    This is the deliverable when no LLM is connected.
+    """
+    dest = OUTPUT_DIR / f"{mode}_prompt.txt"
+    dest.write_text(prompt_file.read_text(encoding="utf-8"), encoding="utf-8")
+    log.info(f"Prompt saved to output: {dest.name}")
+    return dest
 
-    # Also save raw response to logs for debugging
-    raw_log = LOG_DIR / f"{report_date}_llm_response.txt"
+
+def save_report(content: str, report_date: str, mode: str) -> Path:
+    """
+    Save the LLM-generated report to output/<date>_<mode>_report.md.
+    Also saves the raw response to logs/ for debugging.
+    """
+    report_file = OUTPUT_DIR / f"{report_date}_{mode}_report.md"
+    report_file.write_text(content, encoding="utf-8")
+    log.info(f"Report saved: {report_file.name}")
+
+    raw_log = LOG_DIR / f"{report_date}_{mode}_llm_response.txt"
     raw_log.write_text(content, encoding="utf-8")
-    log.info(f"Raw response saved to: {raw_log.name}")
+    log.info(f"Raw response logged: {raw_log.name}")
 
-    return output_file
+    return report_file
 
 
 # ── CLI and main ──────────────────────────────────────────────────────────────
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Generate weekly report using LLM.")
-    parser.add_argument(
-        "--date", type=str, default=str(date.today()),
-        help="Report date in YYYY-MM-DD format (default: today)"
+    parser = argparse.ArgumentParser(
+        description="Generate a weekly commodity market report.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "Examples:\n"
+            "  python scripts/generate_report.py --mode post_wasde\n"
+            "  python scripts/generate_report.py --mode pre_wasde --date 2026-03-05\n"
+            "  python scripts/generate_report.py --mode weekly --data-dir weekly_data/2026-03-11\n"
+        ),
     )
     parser.add_argument(
-        "--prompt", type=str, default=None,
-        help="Explicit path to a prompt file (overrides --date)"
+        "--mode",
+        choices=VALID_MODES,
+        required=True,
+        help="Report type: post_wasde | pre_wasde | weekly",
+    )
+    parser.add_argument(
+        "--date",
+        type=str,
+        default=str(date.today()),
+        help="Report date YYYY-MM-DD (default: today)",
+    )
+    parser.add_argument(
+        "--data-dir",
+        type=str,
+        default=None,
+        help=(
+            "Folder with this week's data files. "
+            "Defaults to weekly_data/<date>/ if it exists, otherwise weekly_data/."
+        ),
+    )
+    parser.add_argument(
+        "--n",
+        type=int,
+        default=3,
+        help="Number of historical reference reports to select (default: 3)",
     )
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
+    mode        = args.mode
     report_date = args.date
+    data_dir    = args.data_dir
+    n           = args.n
 
     log.info("=" * 60)
-    log.info(f"Starting generate_report.py — {report_date}")
+    log.info(f"Starting generate_report.py — {report_date} — mode: {mode}")
 
-    # Find the prompt file
-    prompt_file = find_prompt(report_date, args.prompt)
-    if not prompt_file:
-        log.error("Cannot generate report without a prompt. Exiting.")
+    # Step 1: Select historical reference reports for this mode
+    log.info("Step 1/3 — Selecting reference reports...")
+    if not run_select(mode, n):
+        log.error("Aborting: could not select reference reports.")
         sys.exit(1)
 
-    log.info(f"Using prompt: {prompt_file.name}")
-    prompt = prompt_file.read_text(encoding="utf-8")
-    log.info(f"Prompt length: {len(prompt):,} characters")
+    # Step 2: Assemble the prompt
+    log.info("Step 2/3 — Building prompt...")
+    prompt_file = run_build_prompt(mode, report_date, data_dir)
+    if not prompt_file:
+        log.error("Aborting: could not build prompt.")
+        sys.exit(1)
 
-    # Call the LLM (placeholder or real)
-    log.info("Calling LLM...")
+    prompt = prompt_file.read_text(encoding="utf-8")
+    log.info(f"Prompt size: {len(prompt):,} chars")
+
+    # Step 3: Call LLM (or save prompt if not connected)
+    log.info("Step 3/3 — Generating report...")
     report_text = call_llm(prompt)
 
-    # Save the output
-    output_file = save_output(report_text, report_date)
-
-    log.info("-" * 60)
-    log.info(f"Done. Report draft saved to: {output_file}")
-    log.info("=" * 60)
+    if report_text is None:
+        # LLM not connected — save the prompt to output/ for manual use
+        output_path = save_prompt_to_output(prompt_file, mode)
+        size_kb = output_path.stat().st_size // 1024
+        log.info("-" * 60)
+        log.info("LLM not connected — prompt saved as the deliverable.")
+        log.info(f"  File : {output_path}  ({size_kb} KB)")
+        log.info(f"  Mode : {mode}")
+        log.info(f"  Date : {report_date}")
+        log.info("")
+        log.info("Next steps:")
+        log.info("  Option A (manual): paste the file contents into Claude, ChatGPT, or any LLM.")
+        log.info("  Option B (automated): implement call_llm() in this file, then run again.")
+        log.info("  The generated report will be saved to:")
+        log.info(f"    output/{report_date}_{mode}_report.md")
+        log.info("=" * 60)
+    else:
+        # LLM returned a result — save the report
+        report_path = save_report(report_text, report_date, mode)
+        log.info("-" * 60)
+        log.info(f"Report draft saved: {report_path}")
+        log.info("=" * 60)
 
 
 if __name__ == "__main__":
