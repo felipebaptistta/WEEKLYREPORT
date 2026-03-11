@@ -2697,10 +2697,25 @@ ANTI-COPYING RULES (absolute — no exceptions):
 - Do NOT echo the prior week's conclusions or verdicts. If last week's report said the
   market was 'rangebound with a bearish tilt', and this week that is still true, you must
   say it differently and justify it with this week's specific evidence.
+- Do NOT recycle the same transitions mechanically. Words like 'Meanwhile', 'Against that
+  backdrop', 'On the cash side', and 'Looking ahead' are legitimate only when they arise
+  naturally from this week's argument — not as slot-fillers borrowed from a prior report.
 - Do NOT import any number, price, or data point from the reference reports.
   Every figure cited must appear in the weekly data section below.
 
-FRESHNESS REQUIREMENTS:
+FRESHNESS RULES:
+- Historical reports are references only. They demonstrate method, voice, and structure.
+  They do not dictate what to write this week. The weekly data does that.
+- The current week's facts must drive every section. If a data point is not in the
+  weekly data below, it does not belong in the report.
+- Repeated wording is unacceptable. Any sentence that could have been lifted verbatim
+  or near-verbatim from a prior report must be rewritten from scratch.
+- The output must sound like the same writer on a new week — same analytical voice,
+  same institutional register, same structural discipline — but with entirely fresh
+  language, fresh transitions, and analysis that belongs only to this week.
+  It should not sound like a paraphrase of last week.
+- Maintain continuity of thought — the reader should recognize the same analyst —
+  but never repeat sentence patterns, structural templates, or verbal formulas.
 - Every section transition must be freshly written for this report.
 - The Synthesis section must open with a sentence that could only have been written
   this week — referencing a specific event, figure, or shift from the weekly data.
@@ -2727,8 +2742,10 @@ ROLE OF THE REFERENCE REPORTS:
 - They do not tell you what to write this week. The weekly data does that.
 - Continuity with prior weeks comes from consistent analytical method and structure —
   not from recycling sentences, transitions, or verdicts.
+- Preserve the analytical voice and structural discipline you see in the references,
+  but generate fresh language every time.
 - Treat the references as a craftsman studies a master's technique: absorb the method,
-  then produce original work.
+  then produce entirely original work.
 
 ════════════════════════════════════════════════════════
 
