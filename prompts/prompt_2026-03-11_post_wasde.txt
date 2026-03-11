@@ -2504,176 +2504,315 @@ uneven, the next move hinges on logistics and rainfall rather than anything left
 --- END REFERENCE REPORT ---
 
 === WEEKLY MARKET DATA (USE THIS TO WRITE THE REPORT) ===
---- DATA FILE: README.md ---
-# weekly_data — Weekly Data Pack
+--- DATA FILE: basis.md ---
+# U.S. Cash Basis — Week of 2026-03-11
 
-This folder holds the market data used to write each week's report.
-Create one subfolder per week, named by the report date (YYYY-MM-DD).
-The pipeline reads all files from that subfolder automatically.
+All basis quoted vs. nearby futures contract.
 
----
+## Corn
 
-## Folder Structure
+| Location              | Basis        | Change wk/wk |
+|-----------------------|--------------|--------------|
+| CIF New Orleans (Gulf)| -14¢ May     | +4¢ (firmer) |
+| Illinois River (Cairo)| -26¢ May     | +2¢          |
+| Iowa ethanol plant    | +6¢ May      | unchanged    |
+| Kansas feedlot (KS)   | -18¢ May     | -2¢          |
 
-```
-weekly_data/
-└── 2026-03-12/              ← one folder per report (use the report date)
-    ├── market_prices.md     ← CME front-month futures closes and weekly change
-    ├── spreads.md           ← calendar spreads and % of full carry
-    ├── exports.md           ← USDA export inspections and sales
-    ├── basis.md             ← U.S. cash basis by region and market type
-    ├── cftc.md              ← CFTC managed money positioning
-    ├── weather.md           ← U.S. crop progress; South American conditions
-    ├── wasde.md             ← WASDE key numbers (post_wasde mode only)
-    └── notes.md             ← analyst observations and context
-```
+Gulf corn basis firmed sharply this week on a pickup in export barge demand.
+Illinois River basis followed Gulf higher. Ethanol plant bids remain firm on thin
+local corn availability.
 
-The folder name must match the `--date` you pass to `generate_report.py`.
-All files are optional — include only what you have. Missing files are skipped.
+## Soybeans
 
----
+| Location               | Basis         | Change wk/wk |
+|------------------------|---------------|--------------|
+| CIF New Orleans (Gulf) | -38¢ May      | -3¢ (weaker) |
+| Illinois crush plant   | -22¢ May      | -1¢          |
+| Iowa crush plant       | -19¢ May      | unchanged    |
 
-## File Descriptions
+Gulf soybean basis softened modestly as Brazilian FOB offers continued to undercut
+U.S. Gulf at $1.12–1.18/bu discount. Domestic crush margins remain supportive of
+interior bids.
 
-### market_prices.md
-CME front-month closing prices for corn, soybeans, and wheat.
-Include: contract name, close price, week-over-week change, percent change.
-Also include key international futures if available (Dalian, Euronext, B3 São Paulo).
+## Wheat (SRW)
 
-Example:
-```
-Corn Dec '26:     $4.38/bu    -$0.07  (-1.6%)
-Soybeans Nov '26: $10.21/bu   -$0.12  (-1.2%)
-Wheat Dec '26:    $5.44/bu    +$0.03  (+0.6%)
+| Location               | Basis         | Change wk/wk |
+|------------------------|---------------|--------------|
+| CIF Gulf (SRW)         | -42¢ May      | -5¢ (weaker) |
+| Ohio River (Cincinnati)| -35¢ May      | -3¢          |
+| Midwest flour mill     | -28¢ May      | -2¢          |
 
-Dalian Corn (Jan): ¥2,290/MT (~$7.90/bu)  +0.3%
-Euronext Wheat (May): €202.50/MT (~$215)  -0.8%
-```
+SRW Gulf basis deteriorated on continued competition from Black Sea and EU origins.
+Flour mill bids softened in step with weaker futures.
+--- END DATA FILE ---
 
-### spreads.md
-Calendar spreads and percent of full carry for each commodity.
-Full carry assumes 7% annual interest + $0.05/bu/month storage/insurance.
+--- DATA FILE: cftc.md ---
+# CFTC Commitments of Traders — Managed Money Positioning
+# Data as of Tuesday, 2026-03-03 (released Friday, 2026-03-07)
 
-Example:
-```
-Corn Dec/Mar:    +$0.17   (77% of full carry)
-Soybeans Nov/Jan: +$0.19  (85% of full carry)
-Wheat Dec/Mar:   +$0.18   (82% of full carry)
-```
-Also include any spread changes week-over-week and what they imply (widening carry
-= market prefers to store; narrowing = market wants movement).
+## Corn
+- Net position:       SHORT  108,400 contracts
+- Change on week:     added 9,200 contracts to short  (increased bearish bet)
+- 4-week trend:       funds have been sellers every week for the past four weeks
+- Context:            largest managed money short since November 2025
 
-### exports.md
-USDA weekly export inspections and export sales.
-Include: weekly volume (MMT) per commodity, comparison to prior week and to last year,
-top destination countries, cumulative year-to-date vs. USDA annual target.
+## Soybeans
+- Net position:       SHORT  41,600 contracts
+- Change on week:     covered 3,800 contracts (mild short-covering)
+- 4-week trend:       oscillating between 38K–50K short; no sustained directional bias
+- Context:            short position is large but not at historical extremes
 
-### basis.md
-U.S. cash basis conditions — cents over/under the nearby futures contract.
-Separate river/Gulf export basis from inland processor basis for each commodity.
-Include any notable regional splits (e.g. Illinois River vs. Iowa ethanol plant).
+## Wheat (CBOT SRW)
+- Net position:       SHORT  74,200 contracts
+- Change on week:     added 2,100 contracts to short
+- 4-week trend:       steady selling; funds have not held a net long in SRW since July 2025
+- Context:            near the largest speculative short of the current marketing year
 
-Example:
-```
-Corn:
-  CIF Gulf (export):   -18¢ under Dec  (vs. -12¢ last week)
-  Illinois River:      -30¢ under Dec
-  Iowa ethanol plant:  +2¢ over Dec
+## Wheat (KCBT HRW)
+- Net position:       SHORT  22,800 contracts
+- Change on week:     roughly unchanged (-400 contracts)
 
-Soybeans:
-  CIF Gulf:            -35¢ under Nov
-  Illinois crush plant: -20¢ under Nov
-```
+## Summary
+Managed money remains heavily positioned short across all three commodities. This sets up
+a potentially sharp short-covering rally if bullish data emerges (lower-than-expected
+WASDE stocks, weather disruption, or surge in Chinese buying). The crowded short in corn
+is the most acute risk.
+--- END DATA FILE ---
 
-### cftc.md
-CFTC Commitments of Traders — managed money (speculative) positioning.
-Include: net position (long or short), week-over-week change, and direction trend.
+--- DATA FILE: exports.md ---
+# Export Inspections & Sales — Week of 2026-03-11
 
-Example:
-```
-Corn:     net short 92,000 contracts  (reduced by 14,000 on week)
-Soybeans: net long  28,000 contracts  (added 6,000 on week)
-Wheat:    net short 71,000 contracts  (roughly unchanged)
-```
+## USDA Weekly Export Inspections (week ending 2026-03-05)
 
-### weather.md
-U.S. crop conditions and crop progress (from USDA Crop Progress report).
-South American planting or harvest status and any weather risks.
+### Corn
+- Weekly inspections:     1.214 MMT   (prior week: 1.089 MMT; prior year: 1.342 MMT)
+- Cumulative YTD:         22.4 MMT
+- USDA annual target:     63.5 MMT    (35% of target shipped with ~28 weeks remaining)
+- Top destinations:       Mexico (0.31 MMT), Japan (0.22 MMT), South Korea (0.18 MMT)
 
-Example:
-```
-U.S.:
-  Corn planting: 8% complete (vs. 5% avg)
-  Soybean planting: 4% complete (vs. 3% avg)
-  Winter wheat condition: 47% good/excellent (vs. 52% last year)
+Inspections rebounded from a soft prior week but remain below the year-ago pace needed
+to meet the annual target. Mexico remains the dominant buyer of U.S. corn.
 
-South America:
-  Brazil: soybean harvest 68% complete (ahead of pace); second-crop corn planting 92% done
-  Argentina: recent rains improved corn crop in Buenos Aires province; harvest begins late April
-```
+### Soybeans
+- Weekly inspections:     0.842 MMT   (prior week: 0.914 MMT; prior year: 0.773 MMT)
+- Cumulative YTD:         38.7 MMT
+- USDA annual target:     52.2 MMT    (74% of target shipped — ahead of pace)
+- Top destinations:       China (0.41 MMT), Unknown (0.19 MMT), Netherlands (0.09 MMT)
 
-### wasde.md  ← include this file only for post_wasde mode
-Key USDA WASDE numbers released this week.
-For each commodity include: the new USDA estimate, the change from the prior WASDE,
-the pre-report trade expectation (if known), and the market reaction.
+Soybean inspections remain solid relative to last year. China continued buying at a
+measured pace despite Brazilian competition. The YTD pace is comfortable vs. the USDA
+target but expected to slow materially as Brazilian harvest accelerates.
 
-Example:
-```
-CORN (March WASDE):
-  U.S. ending stocks: 1.540 bbu  (prior: 1.520 bbu; trade expected: 1.510 bbu)
-  U.S. production:    unchanged at 15.143 bbu
-  World ending stocks: 295.0 MMT  (prior: 293.4 MMT)
-  Market reaction: Dec corn +3¢ on release; rally faded by close
+### Wheat
+- Weekly inspections:     0.378 MMT   (prior week: 0.291 MMT; prior year: 0.412 MMT)
+- Cumulative YTD:         17.6 MMT
+- USDA annual target:     23.4 MMT    (75% of target shipped — on pace)
+- Top destinations:       Philippines (0.11 MMT), Mexico (0.09 MMT), Nigeria (0.07 MMT)
 
-SOYBEANS:
-  U.S. ending stocks: 380 mbu  (prior: 380 mbu; trade expected: 375 mbu)
-  Exports revised:    unchanged
-  Market reaction: slightly bearish; Nov soybeans -4¢
+Wheat inspections improved from the prior week but remain below year-ago. Black Sea
+origins continue to compete aggressively, limiting U.S. market share in key destinations.
 
-WHEAT:
-  U.S. ending stocks: 815 mbu  (prior: 798 mbu; trade expected: 800 mbu)
-  World ending stocks: 258.7 MMT (bearish surprise vs. 257.9 expected)
-  Market reaction: Dec wheat -6¢; fresh contract low
-```
+## USDA Weekly Export Sales (week ending 2026-02-27, most recent available)
 
-### notes.md
-Free-text analyst observations — anything not captured in the structured files above.
-Write in plain sentences. This is read directly by the LLM so clarity matters.
+### Corn
+- Net new sales:  892,000 MT    (within market expectations of 700K–1.1 MMT)
 
-Include: fund activity notes, basis anomalies, logistics disruptions, policy news,
-freight changes, currency movements, and anything you want the report to address.
+### Soybeans
+- Net new sales:  411,000 MT    (below expectations of 450K–700K MT)
 
----
+### Wheat
+- Net new sales:  263,000 MT    (in line with expectations)
+--- END DATA FILE ---
 
-## How to Create a Weekly Data Pack
+--- DATA FILE: market_prices.md ---
+# Market Prices — Week of 2026-03-11
 
-```bash
-# 1. Create the folder for your report date
-mkdir weekly_data/2026-03-12
+## CME Futures Closing Prices (Friday, 2026-03-07)
 
-# 2. Add the data files (any combination; all are optional except what your mode needs)
-#    For post_wasde: include wasde.md
-#    For pre_wasde:  omit wasde.md
-#    For weekly:     omit wasde.md
+### Corn
+- May '26:  $4.42/bu    -$0.11  (-2.4%)  wk/wk
+- Dec '26:  $4.51/bu    -$0.09  (-2.0%)  wk/wk
 
-# 3. Run the pipeline
-python scripts/generate_report.py --mode post_wasde --date 2026-03-12
+### Soybeans
+- May '26:  $9.84/bu    -$0.18  (-1.8%)  wk/wk
+- Nov '26:  $9.71/bu    -$0.14  (-1.4%)  wk/wk
 
-# 4. The assembled prompt is saved to:
-#    output/post_wasde_prompt.txt
-#
-#    Paste it into your LLM, or implement call_llm() in generate_report.py
-```
+### Wheat (SRW Chicago)
+- May '26:  $5.32/bu    -$0.04  (-0.7%)  wk/wk
+- Jul '26:  $5.41/bu    -$0.03  (-0.6%)  wk/wk
 
----
+### Wheat (HRW Kansas City)
+- May '26:  $5.58/bu    -$0.06  (-1.1%)  wk/wk
 
-## File Priority
+## International Futures
 
-The pipeline reads all files in the date subfolder alphabetically.
-File names do not need to match these names exactly — any `.md` or `.txt` file
-in the folder will be included. The names above are the recommended convention
-so that the prompt reads in a logical order and the LLM can orient itself
-(prices first, then spreads, then exports, basis, positioning, weather, wasde, notes).
+- Dalian Corn (May):      ¥2,264/MT  (~$7.81/bu)   -0.6% wk/wk
+- Euronext Wheat (May):   €196.50/MT (~$214/MT)     -1.2% wk/wk
+- B3 Soybean (May):       R$123.40/bag (~$9.54/bu)  -0.9% wk/wk
+--- END DATA FILE ---
+
+--- DATA FILE: notes.md ---
+# Analyst Notes — Week of 2026-03-11
+
+## Key Narrative
+The March WASDE delivered a broadly bearish message across the grain complex. The market
+had already priced in unchanged U.S. corn stocks, but the larger-than-expected world
+corn and soybean ending stocks figures — driven by upward revisions to Brazilian production
+— gave bears fresh ammunition heading into the weekend.
+
+Funds had already been selling aggressively in corn (now net short 108,400 contracts —
+the largest bearish bet since November 2025), yet prices did not collapse after WASDE.
+The muted downside response in corn after a bearish report is worth noting: it may
+indicate that much of the bearish supply story is already priced in.
+
+## Corn
+- Export pace is lagging the annual target, but this week's inspections (1.214 MMT) were
+  a meaningful step in the right direction. Mexico continues to be the anchor buyer.
+- Gulf basis firmed +4¢ this week — a countertrend move vs. the weaker futures. Watch
+  whether this reflects genuine demand or just short-term logistical noise.
+- Dec/Mar carry at 76% of full carry is not a green light to store aggressively.
+
+## Soybeans
+- Brazil's harvest at 71% complete and running ahead of schedule is the dominant bearish
+  overhang. Every week of smooth harvest progress further undermines U.S. export demand.
+- The surprise in Nov soybean ending stocks (+10 mbu vs. expectations) combined with the
+  world stocks beat (-9¢ reaction in Nov soybeans) confirms the market is in price-
+  rationing mode: lower prices are needed to stimulate demand or cut planted area.
+- Crush margins are still supportive of domestic processing demand; this is the one
+  bullish counterweight to the export headwinds.
+
+## Wheat
+- Southern Plains dryness is the one genuine weather risk in the complex right now.
+  Kansas topsoil at 41% short/very short is not yet at crisis levels but warrants
+  close monitoring through the March/April green-up period.
+- Black Sea and EU competition continues to shut U.S. wheat out of traditional markets.
+  U.S. Gulf SRW basis at -42¢ under May is already at a significant discount but still
+  not cheap enough to displace Black Sea origin into Asia.
+- Fund short in SRW (74,200 contracts) is crowded. A crop-threatening weather event in
+  Kansas could trigger violent short-covering.
+
+## Cross-Commodity Themes
+- Dollar index (DXY) at 104.2, little changed on the week. A sustained dollar move above
+  106 would add further headwind to U.S. export competitiveness.
+- Crude oil (WTI) at $72.40/bbl, down $1.80 on the week. Lower energy reduces ethanol
+  margin support for corn.
+- No major U.S. policy developments this week affecting the grain complex.
+--- END DATA FILE ---
+
+--- DATA FILE: spreads.md ---
+# Calendar Spreads & Carry — Week of 2026-03-11
+
+Full carry assumptions: 7% annual interest + $0.05/bu/month storage + insurance.
+
+## Corn
+- May/Jul '26:    +$0.09   (41% of full carry)   — tighter than +$0.12 last week
+- Jul/Dec '26:    +$0.18   (68% of full carry)
+- Dec/Mar '27:    +$0.20   (76% of full carry)
+
+Interpretation: nearby spread compression reflects short-term export demand pulling on
+old-crop. Deferred carry remains well-offered, indicating the market is comfortable
+storing new-crop corn.
+
+## Soybeans
+- May/Jul '26:    +$0.10   (52% of full carry)   — roughly unchanged wk/wk
+- Nov/Jan '27:    +$0.17   (79% of full carry)
+- Jan/Mar '27:    +$0.13   (72% of full carry)
+
+Interpretation: new-crop curve is near full carry, consistent with ample South American
+supply competing against U.S. origin into late 2026.
+
+## Wheat (SRW)
+- May/Jul '26:    +$0.11   (58% of full carry)
+- Jul/Dec '26:    +$0.23   (86% of full carry)
+
+Interpretation: wheat curve is the most inverted-relative-to-carry of the three
+commodities. Deferred carry widening to 86% of full suggests the market is pricing
+adequate new-crop supply with no urgency to move wheat now.
+--- END DATA FILE ---
+
+--- DATA FILE: wasde.md ---
+# USDA WASDE — March 2026 Release (2026-03-10)
+
+## CORN — U.S. Balance Sheet
+
+| Item                  | Feb WASDE   | Mar WASDE   | Trade Exp.  | Change      |
+|-----------------------|-------------|-------------|-------------|-------------|
+| Production (bbu)      | 15.143      | 15.143      | 15.143      | unchanged   |
+| Exports (bbu)         | 2.325       | 2.275       | 2.300       | -50 mbu     |
+| Feed & Residual (bbu) | 5.750       | 5.800       | 5.760       | +50 mbu     |
+| Ending Stocks (bbu)   | 1.540       | 1.540       | 1.510       | unchanged   |
+| Stocks/Use ratio      | 10.2%       | 10.2%       | —           | unchanged   |
+
+World ending stocks: 297.4 MMT (Feb: 295.0 MMT; trade exp: 295.5 MMT) — bearish surprise.
+Market reaction: May corn initially +2¢ on unchanged U.S. stocks; faded to -5¢ by close
+as traders focused on the larger-than-expected world stocks increase (Brazil/Argentina).
+
+## SOYBEANS — U.S. Balance Sheet
+
+| Item                  | Feb WASDE   | Mar WASDE   | Trade Exp.  | Change      |
+|-----------------------|-------------|-------------|-------------|-------------|
+| Crush (mbu)           | 2,390       | 2,400       | 2,390       | +10 mbu     |
+| Exports (mbu)         | 1,925       | 1,875       | 1,900       | -50 mbu     |
+| Ending Stocks (mbu)   | 380         | 390         | 370         | +10 mbu     |
+| Stocks/Use ratio      | 9.8%        | 10.1%       | —           | bearish     |
+
+World ending stocks: 124.8 MMT (Feb: 122.6 MMT; trade exp: 122.0 MMT) — bearish surprise.
+Brazil production raised to 127 MMT (+2 MMT); Argentina held at 49 MMT.
+Market reaction: Nov soybeans -9¢; broke below the prior week's low.
+
+## WHEAT — U.S. Balance Sheet
+
+| Item                  | Feb WASDE   | Mar WASDE   | Trade Exp.  | Change      |
+|-----------------------|-------------|-------------|-------------|-------------|
+| Exports (mbu)         | 825         | 800         | 810         | -25 mbu     |
+| Ending Stocks (mbu)   | 815         | 840         | 820         | +25 mbu     |
+| Stocks/Use ratio      | 35.4%       | 36.5%       | —           | bearish     |
+
+World ending stocks: 260.4 MMT (Feb: 258.7 MMT; trade exp: 258.5 MMT) — bearish.
+Market reaction: May SRW wheat -8¢; set a new contract low.
+
+## Overall WASDE Tone
+Broadly bearish for all three commodities. U.S. corn stocks were in line with expectations
+but world stocks were higher than anticipated. Soybean and wheat both showed higher-than-
+expected ending stocks. The March WASDE reinforced the well-supplied global narrative
+that has pressured prices throughout Q1 2026.
+--- END DATA FILE ---
+
+--- DATA FILE: weather.md ---
+# Weather & Crop Conditions — Week of 2026-03-11
+
+## United States
+
+### Winter Wheat
+- Crop condition (as of 2026-03-08):  44% good/excellent  (vs. 46% last week, vs. 55% last year)
+- Poor/very poor:  21%  (vs. 18% last week)
+- Key concern: persistent dryness across the southern Plains (Kansas, Oklahoma, Texas panhandle).
+  The 7-day forecast shows below-normal precipitation and above-normal temperatures for the
+  hard red winter wheat belt. Topsoil moisture rated 41% short-to-very-short in Kansas.
+- Northern Plains: adequate moisture; soft red winter wheat in the Ohio/Indiana corridor rated
+  58% good/excellent — well above the national average.
+
+### Spring Planting Outlook
+- Too early for corn and soybean planting in most of the Corn Belt.
+- 6–14 day outlook: near-normal temperatures for Iowa, Illinois, Indiana; no significant
+  precipitation threat to delay fieldwork when the season opens.
+
+## South America
+
+### Brazil (Mato Grosso, Paraná, Rio Grande do Sul)
+- Soybean harvest: 71% complete as of 2026-03-07 (vs. 65% last week; vs. 58% same week last year)
+- Harvest pace ahead of average; pod-fill conditions were favorable.
+- Estimated production: 127.8 MMT (CONAB March, in line with USDA's 127 MMT).
+- Second-crop corn (safrinha): planting 96% complete; crop rated mostly in good condition.
+  Key risk: late-planted safrinha in Mato Grosso faces a tighter yield window if dry
+  conditions emerge in April during grain-fill.
+
+### Argentina
+- Corn: 18% harvested; crop rated 41% good/excellent, 27% poor/very poor.
+  Buenos Aires province recovering from February dryness after recent rains (20–40mm),
+  but yield expectations already reduced. BCBA estimate: 49.5 MMT (down from 51 MMT).
+- Soybeans: pod-fill in progress; recent rainfall beneficial but came late for early-planted fields.
+  BCBA estimate: 48.2 MMT.
 --- END DATA FILE ---
 
 === TASK ===
