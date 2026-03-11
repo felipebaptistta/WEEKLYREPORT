@@ -182,14 +182,59 @@ def build_task_block(mode: str, report_date: str) -> str:
     preamble = (
         f"You are writing the HigbyBarrett Weekly Commodity Market Report "
         f"for the week of {report_date}.\n\n"
-        "CRITICAL RULES — read before writing:\n"
-        "- Do NOT copy any sentence, phrase, or number from the reference reports above.\n"
-        "- The reference reports are provided so you can match tone, structure, and analytical "
-        "approach — NOT to recycle their content.\n"
-        "- Every piece of analysis must come from the weekly data provided above.\n"
-        "- Use vague language only when genuine uncertainty exists; otherwise state the number "
-        "and the direction.\n"
-        "- Write in full analytical paragraphs. Bullet points only in the Watchlist section.\n"
+
+        "════════════════════════════════════════════════════════\n"
+        "CRITICAL RULES — READ THESE BEFORE WRITING A SINGLE WORD\n"
+        "════════════════════════════════════════════════════════\n\n"
+
+        "ANTI-COPYING RULES (absolute — no exceptions):\n"
+        "- Do NOT copy any sentence, phrase, clause, or transition from any reference report.\n"
+        "  Not even a partial sentence. Not even paraphrased with the same structure.\n"
+        "- Do NOT reuse opening sentences. Every section and every paragraph must begin with\n"
+        "  freshly written sentences that are specific to this week's data and events.\n"
+        "- Do NOT reuse 'So What?' wording. The conclusion, framing, and commercial implication\n"
+        "  of every 'So What?' paragraph must be written entirely from scratch.\n"
+        "- Do NOT mirror any prior report paragraph-by-paragraph, even loosely.\n"
+        "  Reading a reference and then reproducing its sequence of observations with new numbers\n"
+        "  is exactly what is forbidden. The argument must grow from this week's data, not be\n"
+        "  transplanted from a prior week.\n"
+        "- Do NOT echo the prior week's conclusions or verdicts. If last week's report said the\n"
+        "  market was 'rangebound with a bearish tilt', and this week that is still true, you must\n"
+        "  say it differently and justify it with this week's specific evidence.\n"
+        "- Do NOT import any number, price, or data point from the reference reports.\n"
+        "  Every figure cited must appear in the weekly data section below.\n\n"
+
+        "FRESHNESS REQUIREMENTS:\n"
+        "- Every section transition must be freshly written for this report.\n"
+        "- The Synthesis section must open with a sentence that could only have been written\n"
+        "  this week — referencing a specific event, figure, or shift from the weekly data.\n"
+        "- The Watchlist must name specific upcoming reports and specific thresholds to watch,\n"
+        "  drawn entirely from the current market context.\n\n"
+
+        "STYLE REQUIREMENTS (preserve these precisely):\n"
+        "- Analytical and confident: every claim is backed by a specific figure or observable\n"
+        "  market fact. Never hedge without a reason.\n"
+        "- Narrative discipline: sections are connected paragraphs that build an argument.\n"
+        "  Do NOT substitute bullet lists for analytical prose in any body section.\n"
+        "- Institutional register: technical terms (basis, carry, FOB, MMT, bbu, WASDE,\n"
+        "  managed money, % of full carry) are used without definition.\n"
+        "- 'So What?' discipline: every major commodity section ends with a 'So What?'\n"
+        "  paragraph that names a clear, direct implication for a commercial operator\n"
+        "  (merchandiser, elevator, crusher, or end-user).\n"
+        "- Precise: state price levels, percent changes, spread widths, and FOB comparisons\n"
+        "  with exact values from the data. 'Prices fell' is not acceptable;\n"
+        "  'December corn fell 2.5 percent to $4.21/bu' is.\n"
+        "- Cause and effect: always explain why prices moved, not just that they moved.\n\n"
+
+        "ROLE OF THE REFERENCE REPORTS:\n"
+        "- They demonstrate the analytical framework, section depth, and institutional voice.\n"
+        "- They do not tell you what to write this week. The weekly data does that.\n"
+        "- Continuity with prior weeks comes from consistent analytical method and structure —\n"
+        "  not from recycling sentences, transitions, or verdicts.\n"
+        "- Treat the references as a craftsman studies a master's technique: absorb the method,\n"
+        "  then produce original work.\n\n"
+
+        "════════════════════════════════════════════════════════\n\n"
     )
 
     if mode == "post_wasde":
@@ -297,13 +342,22 @@ def assemble_prompt(
     # 3. Historical reference reports (style examples only)
     label = f"=== HISTORICAL REFERENCE REPORTS — {mode.upper()} (STYLE AND STRUCTURE ONLY) ==="
     if references:
-        sections.append(
-            label + "\n"
-            "The following reports are provided as style references ONLY.\n"
-            "Do NOT copy their text, data, or narrative. "
-            "Use them to understand tone, paragraph structure, and analytical approach.\n\n"
-            + references
+        ref_note = (
+            "THESE REPORTS ARE STYLE REFERENCES ONLY.\n"
+            "They are ordered by relevance: same-type reports (matching this report's mode)\n"
+            "appear first, followed by recent reports for narrative continuity.\n\n"
+            "Permitted use:\n"
+            "  ✓ Observe the section sequence and depth of analysis\n"
+            "  ✓ Absorb the analytical register and institutional voice\n"
+            "  ✓ Note how 'So What?' paragraphs are structured as commercial implications\n"
+            "  ✓ Understand how spreads, basis, and carry are explained together\n\n"
+            "Prohibited use:\n"
+            "  ✗ Do NOT copy sentences, transitions, openings, or closings\n"
+            "  ✗ Do NOT mirror a reference report's paragraph sequence with new numbers\n"
+            "  ✗ Do NOT use any number or data point from these reports\n"
+            "  ✗ Do NOT reuse 'So What?' conclusions even in paraphrase\n\n"
         )
+        sections.append(label + "\n" + ref_note + references)
     else:
         sections.append(label + "\n[No reference reports selected. Run select_reports.py first.]")
 

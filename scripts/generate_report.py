@@ -266,13 +266,18 @@ def main():
     if report_text is None:
         # LLM not connected — save the prompt to output/ for manual use
         output_path = save_prompt_to_output(prompt_file, mode)
+        size_kb = output_path.stat().st_size // 1024
         log.info("-" * 60)
-        log.info("LLM not connected. Prompt saved as the deliverable.")
-        log.info(f"Output: {output_path}")
+        log.info("LLM not connected — prompt saved as the deliverable.")
+        log.info(f"  File : {output_path}  ({size_kb} KB)")
+        log.info(f"  Mode : {mode}")
+        log.info(f"  Date : {report_date}")
         log.info("")
-        log.info("To generate a report, either:")
-        log.info("  1. Implement call_llm() in this file and run again, OR")
-        log.info(f"  2. Paste the contents of {output_path} into any LLM manually.")
+        log.info("Next steps:")
+        log.info("  Option A (manual): paste the file contents into Claude, ChatGPT, or any LLM.")
+        log.info("  Option B (automated): implement call_llm() in this file, then run again.")
+        log.info("  The generated report will be saved to:")
+        log.info(f"    output/{report_date}_{mode}_report.md")
         log.info("=" * 60)
     else:
         # LLM returned a result — save the report
