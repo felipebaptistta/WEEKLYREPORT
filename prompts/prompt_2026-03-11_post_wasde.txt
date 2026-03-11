@@ -145,8 +145,21 @@ The reference reports provided are examples of the desired tone and structure on
 Your report must be based entirely on the weekly data provided.
 
 === HISTORICAL REFERENCE REPORTS — POST_WASDE (STYLE AND STRUCTURE ONLY) ===
-The following reports are provided as style references ONLY.
-Do NOT copy their text, data, or narrative. Use them to understand tone, paragraph structure, and analytical approach.
+THESE REPORTS ARE STYLE REFERENCES ONLY.
+They are ordered by relevance: same-type reports (matching this report's mode)
+appear first, followed by recent reports for narrative continuity.
+
+Permitted use:
+  ✓ Observe the section sequence and depth of analysis
+  ✓ Absorb the analytical register and institutional voice
+  ✓ Note how 'So What?' paragraphs are structured as commercial implications
+  ✓ Understand how spreads, basis, and carry are explained together
+
+Prohibited use:
+  ✗ Do NOT copy sentences, transitions, openings, or closings
+  ✗ Do NOT mirror a reference report's paragraph sequence with new numbers
+  ✗ Do NOT use any number or data point from these reports
+  ✗ Do NOT reuse 'So What?' conclusions even in paraphrase
 
 --- REFERENCE REPORT: HigbyBarrett Weekly Report Fev 12, 2026 .md ---
 Weekly Insights | Feb 12, 2026
@@ -2494,8 +2507,9 @@ uneven, the next move hinges on logistics and rainfall rather than anything left
 --- DATA FILE: README.md ---
 # weekly_data — Weekly Data Pack
 
-This folder holds the market data for the current week's report.
-Create one subfolder per week, named by date.
+This folder holds the market data used to write each week's report.
+Create one subfolder per week, named by the report date (YYYY-MM-DD).
+The pipeline reads all files from that subfolder automatically.
 
 ---
 
@@ -2503,89 +2517,221 @@ Create one subfolder per week, named by date.
 
 ```
 weekly_data/
-└── 2026-03-12/                    ← one folder per report week (YYYY-MM-DD)
-    ├── prices.md                  ← CME futures prices and spreads
-    ├── exports.md                 ← USDA export inspections and sales
-    ├── wasde.md                   ← WASDE key numbers (post_wasde mode only)
-    ├── weather.md                 ← weather and crop progress summary
-    └── notes.txt                  ← analyst free-text observations
+└── 2026-03-12/              ← one folder per report (use the report date)
+    ├── market_prices.md     ← CME front-month futures closes and weekly change
+    ├── spreads.md           ← calendar spreads and % of full carry
+    ├── exports.md           ← USDA export inspections and sales
+    ├── basis.md             ← U.S. cash basis by region and market type
+    ├── cftc.md              ← CFTC managed money positioning
+    ├── weather.md           ← U.S. crop progress; South American conditions
+    ├── wasde.md             ← WASDE key numbers (post_wasde mode only)
+    └── notes.md             ← analyst observations and context
 ```
 
-The folder name must match the `--date` argument you pass to `generate_report.py`.
-If no subfolder exists for the date, the script falls back to reading files
-directly from `weekly_data/`.
+The folder name must match the `--date` you pass to `generate_report.py`.
+All files are optional — include only what you have. Missing files are skipped.
 
 ---
 
 ## File Descriptions
 
-### prices.md
-CME front-month futures prices and calendar spreads for corn, soybeans, and wheat.
-Include: close price, week-over-week change, Dec/Mar or Nov/Jan spread, % of full carry.
-Also include key international futures if relevant (Dalian, Euronext, B3).
+### market_prices.md
+CME front-month closing prices for corn, soybeans, and wheat.
+Include: contract name, close price, week-over-week change, percent change.
+Also include key international futures if available (Dalian, Euronext, B3 São Paulo).
 
-Example content:
+Example:
 ```
-Corn Dec '26:    $4.38/bu   -$0.07 (-1.6%)   Dec/Mar spread: +$0.17 (77% full carry)
-Soybeans Nov '26: $10.21/bu  -$0.12 (-1.2%)   Nov/Jan spread: +$0.19 (85% full carry)
-Wheat Dec '26:   $5.44/bu   +$0.03 (+0.6%)   Dec/Mar spread: +$0.18 (82% full carry)
+Corn Dec '26:     $4.38/bu    -$0.07  (-1.6%)
+Soybeans Nov '26: $10.21/bu   -$0.12  (-1.2%)
+Wheat Dec '26:    $5.44/bu    +$0.03  (+0.6%)
+
+Dalian Corn (Jan): ¥2,290/MT (~$7.90/bu)  +0.3%
+Euronext Wheat (May): €202.50/MT (~$215)  -0.8%
 ```
+
+### spreads.md
+Calendar spreads and percent of full carry for each commodity.
+Full carry assumes 7% annual interest + $0.05/bu/month storage/insurance.
+
+Example:
+```
+Corn Dec/Mar:    +$0.17   (77% of full carry)
+Soybeans Nov/Jan: +$0.19  (85% of full carry)
+Wheat Dec/Mar:   +$0.18   (82% of full carry)
+```
+Also include any spread changes week-over-week and what they imply (widening carry
+= market prefers to store; narrowing = market wants movement).
 
 ### exports.md
-USDA weekly export inspections and export sales data.
-Include: weekly volume per commodity, comparison to prior week, comparison to last year,
-top destination countries, cumulative year-to-date vs. USDA target.
+USDA weekly export inspections and export sales.
+Include: weekly volume (MMT) per commodity, comparison to prior week and to last year,
+top destination countries, cumulative year-to-date vs. USDA annual target.
 
-### wasde.md  (post_wasde mode)
-Key USDA WASDE numbers released this week.
-Include: U.S. ending stocks (bbu), world ending stocks (MMT), production, yield,
-and any changes from the prior WASDE. Compare to pre-report trade expectations.
+### basis.md
+U.S. cash basis conditions — cents over/under the nearby futures contract.
+Separate river/Gulf export basis from inland processor basis for each commodity.
+Include any notable regional splits (e.g. Illinois River vs. Iowa ethanol plant).
+
+Example:
+```
+Corn:
+  CIF Gulf (export):   -18¢ under Dec  (vs. -12¢ last week)
+  Illinois River:      -30¢ under Dec
+  Iowa ethanol plant:  +2¢ over Dec
+
+Soybeans:
+  CIF Gulf:            -35¢ under Nov
+  Illinois crush plant: -20¢ under Nov
+```
+
+### cftc.md
+CFTC Commitments of Traders — managed money (speculative) positioning.
+Include: net position (long or short), week-over-week change, and direction trend.
+
+Example:
+```
+Corn:     net short 92,000 contracts  (reduced by 14,000 on week)
+Soybeans: net long  28,000 contracts  (added 6,000 on week)
+Wheat:    net short 71,000 contracts  (roughly unchanged)
+```
 
 ### weather.md
-U.S. crop progress (% harvested or planted, % good/excellent ratings).
-South American planting or harvest progress.
-Key weather events or forecasts that affect near-term supply.
+U.S. crop conditions and crop progress (from USDA Crop Progress report).
+South American planting or harvest status and any weather risks.
 
-### notes.txt
-Free-text analyst observations — anything that does not fit cleanly into
-the structured files above. This is optional but valuable. Write in plain
-sentences. Examples: notable fund activity, basis anomalies, policy news,
-logistics disruptions.
+Example:
+```
+U.S.:
+  Corn planting: 8% complete (vs. 5% avg)
+  Soybean planting: 4% complete (vs. 3% avg)
+  Winter wheat condition: 47% good/excellent (vs. 52% last year)
+
+South America:
+  Brazil: soybean harvest 68% complete (ahead of pace); second-crop corn planting 92% done
+  Argentina: recent rains improved corn crop in Buenos Aires province; harvest begins late April
+```
+
+### wasde.md  ← include this file only for post_wasde mode
+Key USDA WASDE numbers released this week.
+For each commodity include: the new USDA estimate, the change from the prior WASDE,
+the pre-report trade expectation (if known), and the market reaction.
+
+Example:
+```
+CORN (March WASDE):
+  U.S. ending stocks: 1.540 bbu  (prior: 1.520 bbu; trade expected: 1.510 bbu)
+  U.S. production:    unchanged at 15.143 bbu
+  World ending stocks: 295.0 MMT  (prior: 293.4 MMT)
+  Market reaction: Dec corn +3¢ on release; rally faded by close
+
+SOYBEANS:
+  U.S. ending stocks: 380 mbu  (prior: 380 mbu; trade expected: 375 mbu)
+  Exports revised:    unchanged
+  Market reaction: slightly bearish; Nov soybeans -4¢
+
+WHEAT:
+  U.S. ending stocks: 815 mbu  (prior: 798 mbu; trade expected: 800 mbu)
+  World ending stocks: 258.7 MMT (bearish surprise vs. 257.9 expected)
+  Market reaction: Dec wheat -6¢; fresh contract low
+```
+
+### notes.md
+Free-text analyst observations — anything not captured in the structured files above.
+Write in plain sentences. This is read directly by the LLM so clarity matters.
+
+Include: fund activity notes, basis anomalies, logistics disruptions, policy news,
+freight changes, currency movements, and anything you want the report to address.
 
 ---
 
-## Quick-Start for a Post-WASDE Report
+## How to Create a Weekly Data Pack
 
-1. Create the folder:
-   ```
-   mkdir weekly_data/2026-03-12
-   ```
+```bash
+# 1. Create the folder for your report date
+mkdir weekly_data/2026-03-12
 
-2. Add your data files (prices.md, exports.md, wasde.md, weather.md, notes.txt).
+# 2. Add the data files (any combination; all are optional except what your mode needs)
+#    For post_wasde: include wasde.md
+#    For pre_wasde:  omit wasde.md
+#    For weekly:     omit wasde.md
 
-3. Run the pipeline:
-   ```
-   python scripts/generate_report.py --mode post_wasde --date 2026-03-12
-   ```
+# 3. Run the pipeline
+python scripts/generate_report.py --mode post_wasde --date 2026-03-12
 
-4. The assembled prompt is saved to:
-   ```
-   output/post_wasde_prompt.txt
-   ```
+# 4. The assembled prompt is saved to:
+#    output/post_wasde_prompt.txt
+#
+#    Paste it into your LLM, or implement call_llm() in generate_report.py
+```
 
-5. Paste the prompt into your LLM of choice, or implement `call_llm()` in
-   `scripts/generate_report.py` to automate the call.
+---
+
+## File Priority
+
+The pipeline reads all files in the date subfolder alphabetically.
+File names do not need to match these names exactly — any `.md` or `.txt` file
+in the folder will be included. The names above are the recommended convention
+so that the prompt reads in a logical order and the LLM can orient itself
+(prices first, then spreads, then exports, basis, positioning, weather, wasde, notes).
 --- END DATA FILE ---
 
 === TASK ===
 You are writing the HigbyBarrett Weekly Commodity Market Report for the week of 2026-03-11.
 
-CRITICAL RULES — read before writing:
-- Do NOT copy any sentence, phrase, or number from the reference reports above.
-- The reference reports are provided so you can match tone, structure, and analytical approach — NOT to recycle their content.
-- Every piece of analysis must come from the weekly data provided above.
-- Use vague language only when genuine uncertainty exists; otherwise state the number and the direction.
-- Write in full analytical paragraphs. Bullet points only in the Watchlist section.
+════════════════════════════════════════════════════════
+CRITICAL RULES — READ THESE BEFORE WRITING A SINGLE WORD
+════════════════════════════════════════════════════════
+
+ANTI-COPYING RULES (absolute — no exceptions):
+- Do NOT copy any sentence, phrase, clause, or transition from any reference report.
+  Not even a partial sentence. Not even paraphrased with the same structure.
+- Do NOT reuse opening sentences. Every section and every paragraph must begin with
+  freshly written sentences that are specific to this week's data and events.
+- Do NOT reuse 'So What?' wording. The conclusion, framing, and commercial implication
+  of every 'So What?' paragraph must be written entirely from scratch.
+- Do NOT mirror any prior report paragraph-by-paragraph, even loosely.
+  Reading a reference and then reproducing its sequence of observations with new numbers
+  is exactly what is forbidden. The argument must grow from this week's data, not be
+  transplanted from a prior week.
+- Do NOT echo the prior week's conclusions or verdicts. If last week's report said the
+  market was 'rangebound with a bearish tilt', and this week that is still true, you must
+  say it differently and justify it with this week's specific evidence.
+- Do NOT import any number, price, or data point from the reference reports.
+  Every figure cited must appear in the weekly data section below.
+
+FRESHNESS REQUIREMENTS:
+- Every section transition must be freshly written for this report.
+- The Synthesis section must open with a sentence that could only have been written
+  this week — referencing a specific event, figure, or shift from the weekly data.
+- The Watchlist must name specific upcoming reports and specific thresholds to watch,
+  drawn entirely from the current market context.
+
+STYLE REQUIREMENTS (preserve these precisely):
+- Analytical and confident: every claim is backed by a specific figure or observable
+  market fact. Never hedge without a reason.
+- Narrative discipline: sections are connected paragraphs that build an argument.
+  Do NOT substitute bullet lists for analytical prose in any body section.
+- Institutional register: technical terms (basis, carry, FOB, MMT, bbu, WASDE,
+  managed money, % of full carry) are used without definition.
+- 'So What?' discipline: every major commodity section ends with a 'So What?'
+  paragraph that names a clear, direct implication for a commercial operator
+  (merchandiser, elevator, crusher, or end-user).
+- Precise: state price levels, percent changes, spread widths, and FOB comparisons
+  with exact values from the data. 'Prices fell' is not acceptable;
+  'December corn fell 2.5 percent to $4.21/bu' is.
+- Cause and effect: always explain why prices moved, not just that they moved.
+
+ROLE OF THE REFERENCE REPORTS:
+- They demonstrate the analytical framework, section depth, and institutional voice.
+- They do not tell you what to write this week. The weekly data does that.
+- Continuity with prior weeks comes from consistent analytical method and structure —
+  not from recycling sentences, transitions, or verdicts.
+- Treat the references as a craftsman studies a master's technique: absorb the method,
+  then produce original work.
+
+════════════════════════════════════════════════════════
+
 
 THIS IS A POST-WASDE REPORT.
 The USDA WASDE report was released this week. This is the primary event.
