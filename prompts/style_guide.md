@@ -78,6 +78,32 @@ issue, but the sequence is stable:
 
 ---
 
+## Paragraph Depth
+
+**Each analytical paragraph is 6–10 sentences long.** Paragraphs shorter than
+six sentences indicate insufficient depth. A paragraph that merely reports a
+number and moves on is not analysis — it is a news wire item.
+
+Every paragraph must contain four elements, woven together naturally:
+
+1. **Data** — the specific number, event, or market move
+2. **Interpretation** — what the data means in the context of the current balance sheet
+3. **Market implication** — what it implies for price, basis, spreads, or positioning
+4. **Behavioral or positioning signal** — who is acting, why, and what risk that creates
+
+The reader should finish each paragraph with a clear sense of not just *what*
+happened but *why it matters right now* and *what a commercial operator should
+do with that information*.
+
+**Transitional narrative.** Each subsection should open with a sentence that
+connects it to the prior one. The report must read as a single developing
+argument, not as a sequence of independent fact blocks. Transitions like "The
+futures curve confirms that signal" or "The cash market tells a different story"
+are legitimate when they arise naturally from the data. Never recycle the same
+transition phrase across sections.
+
+---
+
 ## Analytical Conventions
 
 **Spreads and carry** are always expressed as a percentage of full carry, not
@@ -98,27 +124,62 @@ Argentina Up-River FOB vs. Russia Black Sea FOB) are central to the export
 analysis. The report always explains *why* one origin is winning business.
 
 **"So What?"** is the most important paragraph in each section. It translates
-market mechanics into a clear implication for a commercial operator: what
-should a merchandiser, elevator, or processor do (or watch for) given this
-week's information?
+market mechanics into direct commercial guidance for a specific operator type.
+Every So What paragraph must name operator types explicitly and state what
+they should do or monitor — not merely summarize the section conclusion.
+
+Operator types: elevator operators, merchandisers, crush plant operators,
+exporters, end-users (millers, feedlots, ethanol plants), hedgers.
+
+A So What paragraph that could have been written last week, or that contains
+no actionable direction, has failed its purpose. Each So What must be
+grounded in this week's specific data and name a specific action or threshold.
+
+---
+
+## Target Length
+
+The completed report should reach **4,000–6,000 words**. Approximate targets:
+
+| Section | Target length |
+|---|---|
+| Executive Summary | 800–1,000 words |
+| Each Commodity Deep Dive | 900–1,200 words |
+| US Cash Market & Basis | 300–500 words |
+| International Cash & Trade Flows | 400–600 words |
+| Key Fundamentals & Reports | 400–600 words |
+| International Reports | 300–500 words |
+| Weather & Crop Conditions | 300–500 words |
+| Synthesis & Outlook | 600–900 words |
+
+A report under 3,500 words has not reached required analytical depth. Expand
+with additional interpretation, positioning context, and commercial implication
+— not with filler or repetition.
 
 ---
 
 ## What a New Report Must Do
 
+- Write every analytical paragraph to 6–10 sentences
 - Lead each commodity section with the most important fact, not background
 - State every price move with its magnitude (e.g. "fell 2.5 percent to $5.09/bu")
 - Compare current data to expectations AND to the same period last year
+- Interpret every number — never state a figure without its context and implication
+- Connect each subsection to the previous one with transitional narrative
 - Name the countries, companies, or policy actions driving trade flows
-- End every major section with a "So What?" paragraph
+- End every major section with a "So What?" paragraph naming specific operators
 - Close with a Synthesis that gives a base-case price range and names specific
   triggers that would break the range in either direction
 - Use current weekly data exclusively — do not import narrative from past reports
 
 ## What a New Report Must Not Do
 
+- Write paragraphs shorter than six sentences in any analytical section
+- State numbers without interpretation or structural implication
+- Write So What paragraphs that do not name specific operator types and actions
 - Copy sentences or phrases from historical reports in the style corpus
 - Use vague directional language without a number attached
 - Substitute bullet lists for analytical paragraphs in body sections
 - Speculate beyond what the data in weekly_data/ supports
 - Repeat the same observation in multiple sections without adding new information
+- Recycle transition phrases across sections or across weeks
