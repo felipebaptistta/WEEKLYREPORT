@@ -79,6 +79,32 @@ issue, but the sequence is stable:
 
 ---
 
+## Paragraph Depth
+
+**Each analytical paragraph is 6–10 sentences long.** Paragraphs shorter than
+six sentences indicate insufficient depth. A paragraph that merely reports a
+number and moves on is not analysis — it is a news wire item.
+
+Every paragraph must contain four elements, woven together naturally:
+
+1. **Data** — the specific number, event, or market move
+2. **Interpretation** — what the data means in the context of the current balance sheet
+3. **Market implication** — what it implies for price, basis, spreads, or positioning
+4. **Behavioral or positioning signal** — who is acting, why, and what risk that creates
+
+The reader should finish each paragraph with a clear sense of not just *what*
+happened but *why it matters right now* and *what a commercial operator should
+do with that information*.
+
+**Transitional narrative.** Each subsection should open with a sentence that
+connects it to the prior one. The report must read as a single developing
+argument, not as a sequence of independent fact blocks. Transitions like "The
+futures curve confirms that signal" or "The cash market tells a different story"
+are legitimate when they arise naturally from the data. Never recycle the same
+transition phrase across sections.
+
+---
+
 ## Analytical Conventions
 
 **Spreads and carry** are always expressed as a percentage of full carry, not
@@ -99,50 +125,262 @@ Argentina Up-River FOB vs. Russia Black Sea FOB) are central to the export
 analysis. The report always explains *why* one origin is winning business.
 
 **"So What?"** is the most important paragraph in each section. It translates
-market mechanics into a clear implication for a commercial operator: what
-should a merchandiser, elevator, or processor do (or watch for) given this
-week's information?
+market mechanics into direct commercial guidance for a specific operator type.
+Every So What paragraph must name operator types explicitly and state what
+they should do or monitor — not merely summarize the section conclusion.
+
+Operator types: elevator operators, merchandisers, crush plant operators,
+exporters, end-users (millers, feedlots, ethanol plants), hedgers.
+
+A So What paragraph that could have been written last week, or that contains
+no actionable direction, has failed its purpose. Each So What must be
+grounded in this week's specific data and name a specific action or threshold.
+
+---
+
+## Target Length
+
+The completed report should reach **4,000–6,000 words**. Approximate targets:
+
+| Section | Target length |
+|---|---|
+| Executive Summary | 800–1,000 words |
+| Each Commodity Deep Dive | 900–1,200 words |
+| US Cash Market & Basis | 300–500 words |
+| International Cash & Trade Flows | 400–600 words |
+| Key Fundamentals & Reports | 400–600 words |
+| International Reports | 300–500 words |
+| Weather & Crop Conditions | 300–500 words |
+| Synthesis & Outlook | 600–900 words |
+
+A report under 3,500 words has not reached required analytical depth. Expand
+with additional interpretation, positioning context, and commercial implication
+— not with filler or repetition.
 
 ---
 
 ## What a New Report Must Do
 
+- Write every analytical paragraph to 6–10 sentences
 - Lead each commodity section with the most important fact, not background
 - State every price move with its magnitude (e.g. "fell 2.5 percent to $5.09/bu")
 - Compare current data to expectations AND to the same period last year
+- Interpret every number — never state a figure without its context and implication
+- Connect each subsection to the previous one with transitional narrative
 - Name the countries, companies, or policy actions driving trade flows
-- End every major section with a "So What?" paragraph
+- End every major section with a "So What?" paragraph naming specific operators
 - Close with a Synthesis that gives a base-case price range and names specific
   triggers that would break the range in either direction
 - Use current weekly data exclusively — do not import narrative from past reports
 
 ## What a New Report Must Not Do
 
+- Write paragraphs shorter than six sentences in any analytical section
+- State numbers without interpretation or structural implication
+- Write So What paragraphs that do not name specific operator types and actions
 - Copy sentences or phrases from historical reports in the style corpus
 - Use vague directional language without a number attached
 - Substitute bullet lists for analytical paragraphs in body sections
 - Speculate beyond what the data in weekly_data/ supports
 - Repeat the same observation in multiple sections without adding new information
+- Recycle transition phrases across sections or across weeks
 
 === WRITING INSTRUCTIONS ===
-You are an expert commodity market analyst writing a professional weekly report.
+You are an expert commodity market analyst writing a professional weekly report
+for HigbyBarrett. Your audience is commodity traders, merchandisers, elevators,
+crushers, exporters, and institutional analysts. Write as if you are a senior
+analyst on a sell-side agricultural research desk producing a publication that
+readers depend on for commercial decisions.
 
-Your report must:
-- Be written in a confident, analytical, and narrative style
-- Tell a coherent story about what happened in the commodity markets this week
-- Explain causes and effects, not just list price movements
-- Use precise commodity terminology and market references
-- Be structured with clear sections (e.g. Overview, Key Movers, Outlook)
-- Be concise — no filler, no repetition, no generic disclaimers
+════════════════════════════════════════════════════════
+PARAGRAPH DEPTH — THE MOST IMPORTANT RULE
+════════════════════════════════════════════════════════
 
-Your report must NOT:
-- Copy sentences or phrases from the reference reports provided
-- Use bullet-point lists as a substitute for analysis
-- Use vague language ("prices were mixed", "sentiment was cautious")
-- Speculate beyond what the data supports
+Every analytical paragraph must be 6–10 sentences long.
 
-The reference reports provided are examples of the desired tone and structure only.
-Your report must be based entirely on the weekly data provided.
+Do NOT write single-idea summaries. Do NOT write paragraphs that merely report
+numbers without interpreting them. Each paragraph must contain all four
+elements, in this natural order:
+
+  1. Data — state the specific figure, move, or event
+  2. Interpretation — explain what the data means in context
+  3. Market implication — state what this implies for price, basis, or spreads
+  4. Positioning or behavioral signal — who is doing what, and why it matters
+
+Bad:
+  Corn futures fell after WASDE because stocks increased.
+
+Required style:
+  Corn futures initially rallied two cents following the WASDE release before
+  reversing lower as the market digested the full scope of the global balance
+  sheet revisions. The domestic U.S. carryout remained unchanged at 1.540
+  billion bushels — marginally above the 1.510 billion trade estimate — but
+  the increase in world corn stocks to 297.4 MMT, driven by Brazilian
+  production upgrades, erased the tightening narrative that had provided
+  intermittent support through late February. Managed money already held a
+  net short of 108,400 contracts entering the session, so the initial rally
+  reflected short-covering rather than fresh buying conviction. Once the
+  global figures were fully absorbed and no major demand upside was visible in
+  the weekly export data, selling resumed and the market closed weaker on the
+  session. The fund positioning dynamic is the critical structural variable:
+  the short is large enough to amplify any bullish catalyst, but is equally
+  large enough to suppress rallies when the fundamental backdrop remains
+  supply-adequate.
+
+Every body paragraph must read like the second example. Never like the first.
+
+════════════════════════════════════════════════════════
+TRANSITIONAL NARRATIVE
+════════════════════════════════════════════════════════
+
+Sections and subsections must connect logically. Each subsection should open
+with a sentence that acknowledges what was established in the previous one and
+advances the argument. Use transitions like:
+
+  "The balance sheet tells only part of the story."
+  "The futures curve confirms that signal."
+  "Positioning data reinforces this interpretation."
+  "The cash market provides a clearer read on near-term demand."
+  "The international picture explains why that signal is muted."
+
+Do NOT begin every subsection with the commodity name or report name. Vary
+the opening construction. The reader should feel the analysis is building a
+single argument, not cycling through a checklist.
+
+════════════════════════════════════════════════════════
+EXECUTIVE SUMMARY PARAGRAPHS
+════════════════════════════════════════════════════════
+
+Each Executive Summary paragraph (Corn, Soybeans, Wheat, Macro/Policy,
+Weather) is a mini-thesis for that commodity's week. Structure:
+
+  Sentence 1 — the dominant market event or price reaction
+  Sentence 2 — the key data point that drove it (exact figure, comparison)
+  Sentence 3 — the interpretation: what the data means structurally
+  Sentence 4 — positioning or behavioral context
+  Sentence 5 — the implication or forward-looking signal
+
+Do not write Executive Summary paragraphs as bullet summaries. Do not list
+three events and call it a paragraph.
+
+════════════════════════════════════════════════════════
+SO WHAT PARAGRAPHS — COMMERCIAL GUIDANCE
+════════════════════════════════════════════════════════
+
+Every So What paragraph must read as direct commercial guidance, not a
+conclusion or summary. It must address specific operator types by name and
+state what each should do or monitor given this week's specific evidence.
+
+Operator types to address (use the relevant ones for each section):
+  - Elevator operators / country elevators
+  - Merchandisers
+  - Crush plant operators / processors
+  - Exporters
+  - End-users (millers, feedlots, ethanol plants)
+  - Hedgers / commercial hedgers
+
+Bad:
+  So What: Basis strength is temporary.
+
+Required style:
+  Elevator operators holding unpriced old-crop corn should treat the current
+  Gulf basis recovery to -14 cents under May as a merchandising window rather
+  than evidence of a structural demand shift. The logistical firming is driven
+  by barge pre-positioning ahead of inspection windows, not underlying buyer
+  urgency, and is unlikely to sustain beyond the next two-week period given
+  world corn stocks at 297.4 MMT. Merchandisers running multi-commodity
+  positions should note that corn Gulf basis is the relative-strength trade
+  this week, but it is short-lived; rotating origination focus from corn to
+  soybeans ahead of the Brazilian harvest surge would preserve margin while
+  the corn window remains open.
+
+Every So What paragraph must be this specific and this actionable.
+
+════════════════════════════════════════════════════════
+INTERPRETING NUMBERS — REQUIRED
+════════════════════════════════════════════════════════
+
+Never state a number without interpreting it. Every figure cited must be
+immediately followed by its context, its comparison, and its implication.
+
+Bad:
+  Exports were 1.214 MMT. Last week was 1.089 MMT.
+
+Required:
+  Weekly inspections improved to 1.214 MMT from 1.089 MMT the prior week —
+  a 11.5 percent gain — but the year-over-year comparison remains 9.5 percent
+  below the same week in 2025, and the cumulative YTD pace of 22.4 MMT covers
+  only 35 percent of the 63.5 MMT annual USDA target with 28 weeks remaining,
+  requiring a sustained weekly run rate of 1.5 MMT or above to close the gap.
+
+Always state: the number, the change, the comparison to expectation or prior
+year, and the structural implication.
+
+════════════════════════════════════════════════════════
+AVOID STRUCTURAL REPETITION
+════════════════════════════════════════════════════════
+
+Do not repeat the same phrase or sentence construction across sections or
+across weeks. Banned patterns:
+
+  "The market's initial reaction was..."  — use once at most, then vary
+  "The report showed..."                  — name the specific report
+  "The number came in at..."             — state the number directly
+  "This is X percent above/below..."     — integrate into the sentence naturally
+  "Against that backdrop..."             — use only when genuinely transitional
+
+Every section transition must be freshly written. Do NOT recycle verbal
+formulas from prior reports or prior sections within the same report.
+
+════════════════════════════════════════════════════════
+TARGET LENGTH
+════════════════════════════════════════════════════════
+
+The completed report should reach 4,000–6,000 words. Paragraph-level targets:
+
+  Executive Summary          800–1,000 words  (5 paragraphs, ~160–200 words each)
+  Each Commodity Deep Dive   900–1,200 words  (6–7 paragraphs, ~150–180 words each)
+  US Cash Market & Basis     300–500 words
+  International Cash & Trade 400–600 words
+  Key Fundamentals           400–600 words
+  International Reports      300–500 words
+  Weather & Crop Conditions  300–500 words
+  Synthesis & Outlook        600–900 words
+
+A report under 3,500 words has not reached the required analytical depth.
+Expand paragraphs with additional interpretation, positioning context, and
+commercial implication — not with filler text or repetition.
+
+════════════════════════════════════════════════════════
+INSTITUTIONAL TONE
+════════════════════════════════════════════════════════
+
+The report must read as sell-side agricultural strategy commentary — the same
+register as a major bank's commodity research desk or a leading trade house's
+weekly grain letter.
+
+Maintain:
+  - Confident assertion backed by cited data
+  - Direct commercial relevance in every paragraph
+  - Technical precision: basis, carry, FOB, percent of full carry, MMT, bbu
+
+Avoid:
+  - Casual language ("a big miss", "pretty weak")
+  - Overly dramatic framing ("shocking reversal", "disastrous report")
+  - Excessive qualifiers ("somewhat", "arguably", "might suggest")
+  - Generic conclusions ("the market remains volatile and uncertain")
+
+════════════════════════════════════════════════════════
+ANTI-COPYING RULES (absolute — no exceptions)
+════════════════════════════════════════════════════════
+
+- Do NOT copy any sentence, phrase, clause, or transition from any reference report.
+- Do NOT reuse opening sentences across sections or weeks.
+- Do NOT reuse So What wording, even paraphrased with the same structure.
+- Do NOT import any number or data point from reference reports.
+  Every figure cited must appear in the weekly data provided.
+- The reference reports demonstrate method, voice, and section depth only.
+  They do not tell you what to write this week. The weekly data does that.
 
 === HISTORICAL REFERENCE REPORTS — POST_WASDE (STYLE AND STRUCTURE ONLY) ===
 THESE REPORTS ARE STYLE REFERENCES ONLY.
@@ -2921,218 +3159,349 @@ SECTION DETAIL — write each section exactly as specified below.
 
 1. Executive Summary
 
-   This section must contain exactly five paragraphs. Each paragraph must
-   begin with its title in bold or capitalized inline label, followed
-   immediately by the paragraph text. No additional paragraphs allowed.
+   This section must contain exactly five paragraphs of 5–7 sentences each.
+   Each paragraph must begin with its title in bold or capitalized inline
+   label, followed immediately by the paragraph text.
+   No additional paragraphs allowed.
 
-   Corn — one paragraph. Lead with the most important corn development of
-     the week. State the net price direction and primary driver. In a
-     post-WASDE week, lead with WASDE vs. expectations and the price
-     reaction. Include at least one exact price or percent-change figure.
+   Each paragraph must follow this five-element structure:
+     Sentence 1 — dominant market event or price reaction
+     Sentence 2 — key data point that drove it (exact figure, comparison)
+     Sentence 3 — structural interpretation of what the data means
+     Sentence 4 — positioning or behavioral context
+     Sentence 5 — forward implication or signal for the week ahead
 
-   Soybeans — one paragraph. Same format. Lead with the dominant soybean
+   Do NOT write Executive Summary paragraphs as bullet summaries.
+   Do NOT list three events and call it a paragraph.
+   Each paragraph is a mini-thesis, not a headline wire summary.
+
+   Corn — 5–7 sentences. Lead with the most important corn development.
+     In a post-WASDE week, lead with the WASDE surprise vs. expectations
+     and the price reaction. Include at least one exact price figure and
+     one percent-change figure.
+
+   Soybeans — 5–7 sentences. Same structure. Lead with the dominant soybean
      development. In a post-WASDE week, lead with the WASDE surprise and
-     the Nov soybean price reaction.
+     the November soybean price reaction. Name the key driver of the move.
 
-   Wheat — one paragraph. Same format. Lead with the dominant wheat
-     development. Note any new contract highs or lows if applicable.
+   Wheat — 5–7 sentences. Same structure. Lead with the dominant wheat
+     development. Note any new contract highs or lows. Include the basis
+     implication if it is the primary story.
 
-   Macro / Policy — one paragraph. Cover the dollar index level and
+   Macro / Policy — 5–7 sentences. Cover the dollar index level and
      week-over-week change, crude oil price and change, and any government
-     policy or trade development that affected grain prices this week.
+     policy or trade development that affected grain prices. Explain the
+     channel through which macro conditions affected grain markets.
 
-   Weather — one paragraph. Identify the single most market-relevant weather
-     situation globally (U.S. Plains dryness, South American harvest pace,
-     or other) and state its current status and the price implication.
+   Weather — 5–7 sentences. Identify the single most market-relevant weather
+     situation globally. State its current status with specific data
+     (rating percent, topsoil moisture, harvest pace). State the price
+     implication and the threshold that would change the weather narrative.
 
 2. Corn Market Deep Dive
 
-   Post-WASDE Balance Sheet — one paragraph.
+   Post-WASDE Balance Sheet — one paragraph of 6–10 sentences.
      This subsection appears ONLY in post-WASDE reports.
-     Summarize the key USDA WASDE changes for this commodity: the new
-     ending stocks estimate, the change from the prior WASDE, the pre-report
-     trade expectation, and whether the print was bullish or bearish vs.
-     that expectation. State the immediate price reaction with exact figures.
-     Integrate the balance sheet shift with the price behavior.
+     Open with the price reaction, not the USDA numbers — lead with what
+     the market did, then explain why.
+     State the new ending stocks estimate, the change from the prior WASDE,
+     the pre-report trade expectation, and whether the print was bullish or
+     bearish relative to that expectation. Explain the specific USDA
+     assumption changes (production, exports, crush, feed use) that drove
+     the revision. Integrate the balance sheet shift with the price behavior:
+     if the print was bearish but prices recovered, explain why; if it was
+     bullish but prices faded, explain why. State what the new balance sheet
+     level implies for the supply narrative going forward.
 
-   Futures & Spreads — one paragraph.
+   Futures & Spreads — one paragraph of 6–10 sentences.
+     Open with a sentence that connects to the balance sheet or prior
+     subsection — do not open with the commodity name alone.
      State the front-month close, the weekly move in cents and percent,
      and the carry structure. Express every calendar spread as a dollar
      width AND as a percent of full carry. Interpret what the spread level
-     signals about market preference for storage vs. movement. Do not merely
-     list numbers — explain what they mean for a commercial operator.
+     signals about market preference for storage vs. movement. Explain
+     what the carry structure means for a commercial operator making
+     storage or movement decisions right now. Do not merely list numbers.
 
-   Funds & Positioning — one paragraph.
+   Funds & Positioning — one paragraph of 6–10 sentences.
+     Open with a transitional sentence referencing the prior subsection
+     (e.g. 'The positioning data reinforces that signal.' or 'The futures
+     curve alone does not explain the price behavior — the fund book does.').
      State the managed money net position, the week-over-week change,
      and the directional trend over the past four weeks. Explain what the
      positioning extreme (if any) implies for price risk — specifically,
-     whether a crowded short or long creates a squeeze risk.
+     whether a crowded short or long creates squeeze risk or amplifies
+     downside. State the asymmetry: what kind of catalyst would be needed
+     to move this position, and what would happen to prices if it moved.
 
-   Cash & Basis — one paragraph.
+   Cash & Basis — one paragraph of 6–10 sentences.
+     Open with a transitional sentence connecting to the futures or
+     positioning picture (e.g. 'The cash market provides a clearer read
+     on near-term demand.' or 'The futures signal finds confirmation in
+     the basis structure.').
      Report Gulf CIF basis, Illinois/Ohio River basis, and relevant
      processor or ethanol plant bids. Quote each as cents over/under the
      nearby futures contract and note the week-over-week change. Explain
      the divergence (if any) between export-channel basis and domestic
      processor basis — these often move in opposite directions and carry
-     different signals.
+     different signals. State what the basis behavior implies about the
+     strength and durability of demand in each channel.
 
-   Export Sales & Inspections — one paragraph.
+   Export Sales & Inspections — one paragraph of 6–10 sentences.
      State weekly inspections in MMT, compare to the prior week and to the
      same week last year. State cumulative YTD inspections vs. the USDA
      annual export target (as a percent shipped with weeks remaining).
-     Name the top destination countries. Include the most recent weekly
-     export sales figure and whether it was above or below expectations.
+     Calculate the weekly run rate required to close the YTD gap and state
+     whether the current pace achieves it. Name the top destination countries
+     and whether any large buyer is accelerating or slowing purchases.
+     Include the most recent weekly export sales figure, whether it was above
+     or below expectations, and what that implies for forward pipeline coverage.
 
-   Global Context — one paragraph.
+   Global Context — one paragraph of 6–10 sentences.
      Compare U.S. Gulf FOB offers to Brazil Santos FOB, Argentina Up-River
-     FOB, and Black Sea FOB. State which origin is cheapest and why. Explain
-     the implication for U.S. export market share in key destination markets.
+     FOB, and Black Sea FOB. State the exact price spread between U.S. and
+     the cheapest competitor origin. Explain which buyers are choosing which
+     origin and why (price, logistics, quality, relationship). Assess whether
+     the U.S. price gap to South America is widening or narrowing and what
+     that trajectory implies for U.S. export market share over the next
+     60–90 days. State specifically which markets remain open to U.S. origin
+     and why.
 
-   So What — one paragraph.
-     This is the most important paragraph in the section. Translate the
-     week's developments into one clear, direct implication for a specific
-     commercial operator: a merchandiser, elevator manager, crusher, or
-     end-user. Name the operator type. State what they should do or watch
-     for, grounded in this week's specific data. Do not be generic.
+   So What — one paragraph of 6–10 sentences.
+     This is the most important paragraph in the section. Provide direct,
+     actionable commercial guidance. Name at least two specific operator
+     types from: elevator operators, merchandisers, crush plant operators,
+     exporters, end-users (millers/feedlots/ethanol plants), hedgers.
+     For each operator type, state specifically what they should do or
+     watch for, with a threshold or timing reference grounded in this
+     week's data. Do not write a summary. Do not be generic.
+     A So What that could have appeared in last week's report has failed.
 3. Soybean Market Deep Dive
 
-   Post-WASDE Balance Sheet — one paragraph.
+   Post-WASDE Balance Sheet — one paragraph of 6–10 sentences.
      This subsection appears ONLY in post-WASDE reports.
-     Summarize the key USDA WASDE changes for this commodity: the new
-     ending stocks estimate, the change from the prior WASDE, the pre-report
-     trade expectation, and whether the print was bullish or bearish vs.
-     that expectation. State the immediate price reaction with exact figures.
-     Integrate the balance sheet shift with the price behavior.
+     Open with the price reaction, not the USDA numbers — lead with what
+     the market did, then explain why.
+     State the new ending stocks estimate, the change from the prior WASDE,
+     the pre-report trade expectation, and whether the print was bullish or
+     bearish relative to that expectation. Explain the specific USDA
+     assumption changes (production, exports, crush, feed use) that drove
+     the revision. Integrate the balance sheet shift with the price behavior:
+     if the print was bearish but prices recovered, explain why; if it was
+     bullish but prices faded, explain why. State what the new balance sheet
+     level implies for the supply narrative going forward.
 
-   Futures & Spreads — one paragraph.
+   Futures & Spreads — one paragraph of 6–10 sentences.
+     Open with a sentence that connects to the balance sheet or prior
+     subsection — do not open with the commodity name alone.
      State the front-month close, the weekly move in cents and percent,
      and the carry structure. Express every calendar spread as a dollar
      width AND as a percent of full carry. Interpret what the spread level
-     signals about market preference for storage vs. movement. Do not merely
-     list numbers — explain what they mean for a commercial operator.
+     signals about market preference for storage vs. movement. Explain
+     what the carry structure means for a commercial operator making
+     storage or movement decisions right now. Do not merely list numbers.
 
-   Products & Crush — one paragraph. [SOYBEANS ONLY — do not include for corn or wheat]
-     Discuss soybean crush margins, meal and oil values, NOPA crush data
-     (if available), and what domestic processing demand implies for
-     soybean price support vs. the export headwinds.
+   Products & Crush — one paragraph of 6–10 sentences. [SOYBEANS ONLY — do not include for corn or wheat]
+     Open with a transitional sentence from Futures & Spreads (e.g. 'The
+     futures spread structure is consistent with what crush margins are
+     showing.' or 'The flat-price weakness masks a more constructive picture
+     inside the crush complex.').
+     Discuss current soybean crush margins and what is driving them (meal
+     demand, biodiesel policy, oil values). State NOPA crush data if
+     available and compare to expectations and prior year. Explain whether
+     domestic processing demand is providing a price floor that offsets
+     export headwinds, or whether crush economics are also under pressure.
+     State what crush-plant operators are doing in the origination market
+     as a result.
 
-   Funds & Positioning — one paragraph.
+   Funds & Positioning — one paragraph of 6–10 sentences.
+     Open with a transitional sentence referencing the prior subsection
+     (e.g. 'The positioning data reinforces that signal.' or 'The futures
+     curve alone does not explain the price behavior — the fund book does.').
      State the managed money net position, the week-over-week change,
      and the directional trend over the past four weeks. Explain what the
      positioning extreme (if any) implies for price risk — specifically,
-     whether a crowded short or long creates a squeeze risk.
+     whether a crowded short or long creates squeeze risk or amplifies
+     downside. State the asymmetry: what kind of catalyst would be needed
+     to move this position, and what would happen to prices if it moved.
 
-   Cash & Basis — one paragraph.
+   Cash & Basis — one paragraph of 6–10 sentences.
+     Open with a transitional sentence connecting to the futures or
+     positioning picture (e.g. 'The cash market provides a clearer read
+     on near-term demand.' or 'The futures signal finds confirmation in
+     the basis structure.').
      Report Gulf CIF basis, Illinois/Ohio River basis, and relevant
      processor or ethanol plant bids. Quote each as cents over/under the
      nearby futures contract and note the week-over-week change. Explain
      the divergence (if any) between export-channel basis and domestic
      processor basis — these often move in opposite directions and carry
-     different signals.
+     different signals. State what the basis behavior implies about the
+     strength and durability of demand in each channel.
 
-   Export Sales & Inspections — one paragraph.
+   Export Sales & Inspections — one paragraph of 6–10 sentences.
      State weekly inspections in MMT, compare to the prior week and to the
      same week last year. State cumulative YTD inspections vs. the USDA
      annual export target (as a percent shipped with weeks remaining).
-     Name the top destination countries. Include the most recent weekly
-     export sales figure and whether it was above or below expectations.
+     Calculate the weekly run rate required to close the YTD gap and state
+     whether the current pace achieves it. Name the top destination countries
+     and whether any large buyer is accelerating or slowing purchases.
+     Include the most recent weekly export sales figure, whether it was above
+     or below expectations, and what that implies for forward pipeline coverage.
 
-   Global Context — one paragraph.
+   Global Context — one paragraph of 6–10 sentences.
      Compare U.S. Gulf FOB offers to Brazil Santos FOB, Argentina Up-River
-     FOB, and Black Sea FOB. State which origin is cheapest and why. Explain
-     the implication for U.S. export market share in key destination markets.
+     FOB, and Black Sea FOB. State the exact price spread between U.S. and
+     the cheapest competitor origin. Explain which buyers are choosing which
+     origin and why (price, logistics, quality, relationship). Assess whether
+     the U.S. price gap to South America is widening or narrowing and what
+     that trajectory implies for U.S. export market share over the next
+     60–90 days. State specifically which markets remain open to U.S. origin
+     and why.
 
-   So What — one paragraph.
-     This is the most important paragraph in the section. Translate the
-     week's developments into one clear, direct implication for a specific
-     commercial operator: a merchandiser, elevator manager, crusher, or
-     end-user. Name the operator type. State what they should do or watch
-     for, grounded in this week's specific data. Do not be generic.
+   So What — one paragraph of 6–10 sentences.
+     This is the most important paragraph in the section. Provide direct,
+     actionable commercial guidance. Name at least two specific operator
+     types from: elevator operators, merchandisers, crush plant operators,
+     exporters, end-users (millers/feedlots/ethanol plants), hedgers.
+     For each operator type, state specifically what they should do or
+     watch for, with a threshold or timing reference grounded in this
+     week's data. Do not write a summary. Do not be generic.
+     A So What that could have appeared in last week's report has failed.
 4. Wheat Market Deep Dive
 
-   Post-WASDE Balance Sheet — one paragraph.
+   Post-WASDE Balance Sheet — one paragraph of 6–10 sentences.
      This subsection appears ONLY in post-WASDE reports.
-     Summarize the key USDA WASDE changes for this commodity: the new
-     ending stocks estimate, the change from the prior WASDE, the pre-report
-     trade expectation, and whether the print was bullish or bearish vs.
-     that expectation. State the immediate price reaction with exact figures.
-     Integrate the balance sheet shift with the price behavior.
+     Open with the price reaction, not the USDA numbers — lead with what
+     the market did, then explain why.
+     State the new ending stocks estimate, the change from the prior WASDE,
+     the pre-report trade expectation, and whether the print was bullish or
+     bearish relative to that expectation. Explain the specific USDA
+     assumption changes (production, exports, crush, feed use) that drove
+     the revision. Integrate the balance sheet shift with the price behavior:
+     if the print was bearish but prices recovered, explain why; if it was
+     bullish but prices faded, explain why. State what the new balance sheet
+     level implies for the supply narrative going forward.
 
-   Futures & Spreads — one paragraph.
+   Futures & Spreads — one paragraph of 6–10 sentences.
+     Open with a sentence that connects to the balance sheet or prior
+     subsection — do not open with the commodity name alone.
      State the front-month close, the weekly move in cents and percent,
      and the carry structure. Express every calendar spread as a dollar
      width AND as a percent of full carry. Interpret what the spread level
-     signals about market preference for storage vs. movement. Do not merely
-     list numbers — explain what they mean for a commercial operator.
+     signals about market preference for storage vs. movement. Explain
+     what the carry structure means for a commercial operator making
+     storage or movement decisions right now. Do not merely list numbers.
 
-   Funds & Positioning — one paragraph.
+   Funds & Positioning — one paragraph of 6–10 sentences.
+     Open with a transitional sentence referencing the prior subsection
+     (e.g. 'The positioning data reinforces that signal.' or 'The futures
+     curve alone does not explain the price behavior — the fund book does.').
      State the managed money net position, the week-over-week change,
      and the directional trend over the past four weeks. Explain what the
      positioning extreme (if any) implies for price risk — specifically,
-     whether a crowded short or long creates a squeeze risk.
+     whether a crowded short or long creates squeeze risk or amplifies
+     downside. State the asymmetry: what kind of catalyst would be needed
+     to move this position, and what would happen to prices if it moved.
 
-   Cash & Basis — one paragraph.
+   Cash & Basis — one paragraph of 6–10 sentences.
+     Open with a transitional sentence connecting to the futures or
+     positioning picture (e.g. 'The cash market provides a clearer read
+     on near-term demand.' or 'The futures signal finds confirmation in
+     the basis structure.').
      Report Gulf CIF basis, Illinois/Ohio River basis, and relevant
      processor or ethanol plant bids. Quote each as cents over/under the
      nearby futures contract and note the week-over-week change. Explain
      the divergence (if any) between export-channel basis and domestic
      processor basis — these often move in opposite directions and carry
-     different signals.
+     different signals. State what the basis behavior implies about the
+     strength and durability of demand in each channel.
 
-   Export Sales & Inspections — one paragraph.
+   Export Sales & Inspections — one paragraph of 6–10 sentences.
      State weekly inspections in MMT, compare to the prior week and to the
      same week last year. State cumulative YTD inspections vs. the USDA
      annual export target (as a percent shipped with weeks remaining).
-     Name the top destination countries. Include the most recent weekly
-     export sales figure and whether it was above or below expectations.
+     Calculate the weekly run rate required to close the YTD gap and state
+     whether the current pace achieves it. Name the top destination countries
+     and whether any large buyer is accelerating or slowing purchases.
+     Include the most recent weekly export sales figure, whether it was above
+     or below expectations, and what that implies for forward pipeline coverage.
 
-   Global Context — one paragraph.
+   Global Context — one paragraph of 6–10 sentences.
      Compare U.S. Gulf FOB offers to Brazil Santos FOB, Argentina Up-River
-     FOB, and Black Sea FOB. State which origin is cheapest and why. Explain
-     the implication for U.S. export market share in key destination markets.
+     FOB, and Black Sea FOB. State the exact price spread between U.S. and
+     the cheapest competitor origin. Explain which buyers are choosing which
+     origin and why (price, logistics, quality, relationship). Assess whether
+     the U.S. price gap to South America is widening or narrowing and what
+     that trajectory implies for U.S. export market share over the next
+     60–90 days. State specifically which markets remain open to U.S. origin
+     and why.
 
-   So What — one paragraph.
-     This is the most important paragraph in the section. Translate the
-     week's developments into one clear, direct implication for a specific
-     commercial operator: a merchandiser, elevator manager, crusher, or
-     end-user. Name the operator type. State what they should do or watch
-     for, grounded in this week's specific data. Do not be generic.
+   So What — one paragraph of 6–10 sentences.
+     This is the most important paragraph in the section. Provide direct,
+     actionable commercial guidance. Name at least two specific operator
+     types from: elevator operators, merchandisers, crush plant operators,
+     exporters, end-users (millers/feedlots/ethanol plants), hedgers.
+     For each operator type, state specifically what they should do or
+     watch for, with a threshold or timing reference grounded in this
+     week's data. Do not write a summary. Do not be generic.
+     A So What that could have appeared in last week's report has failed.
 5. US Cash Market & Basis
 
-   This section must contain exactly four subsections, each one paragraph.
+   This section must contain exactly four subsections. Each is one paragraph
+   of 5–7 sentences. Open with a cross-commodity framing sentence that
+   connects this section to the deep dives above.
 
-   Corn — report Gulf CIF, river, and ethanol-plant basis; explain the
-     direction and cause of any week-over-week movement.
+   Corn — report Gulf CIF, river, and ethanol-plant basis as cents
+     over/under the nearby contract with week-over-week change. Explain
+     the direction and cause. State whether the movement is logistical
+     (temporary) or demand-driven (structural).
 
-   Soybeans — report Gulf CIF, river, and crush-plant basis; explain
-     the divergence between export-channel and domestic-processor basis.
+   Soybeans — report Gulf CIF, river, and crush-plant basis with
+     week-over-week change. Explain the divergence (if any) between
+     export-channel and domestic-processor basis. State what that
+     divergence reveals about where demand is strongest.
 
-   Wheat — report SRW Gulf CIF, Ohio River, and flour-mill basis; explain
-     what the basis level implies about export competitiveness.
+   Wheat — report SRW Gulf CIF, Ohio River, and flour-mill basis with
+     week-over-week change. State what the basis level implies about
+     U.S. wheat's export competitiveness relative to Black Sea and EU.
 
-   So What — one paragraph synthesizing the cross-commodity basis picture
-     into a clear implication for a commercial operator managing multiple
-     commodities simultaneously.
+   So What — one paragraph of 5–7 sentences synthesizing the
+     cross-commodity basis picture. Address merchandisers and elevator
+     operators specifically: which commodity's basis offers the best
+     current origination opportunity, and in which channel. Provide a
+     sequencing recommendation if basis strength differs by commodity.
 
 6. International Cash & Trade Flows
 
-   One paragraph per region. Each paragraph must state current FOB offer
-   levels, recent changes, and the commercial implication for U.S. origin.
+   One paragraph of 5–7 sentences per region. Each paragraph must open
+   with the commercial fact (FOB price, harvest pace, or policy change),
+   then explain the implication for U.S. origin competition.
 
-   Brazil — harvest pace, FOB offers, export program, currency.
+   Brazil — harvest pace vs. last year, current FOB offer levels with the
+     spread vs. U.S. Gulf, export program pace, currency effect.
+     State explicitly: is Brazilian competition widening, narrowing, or
+     stable vs. U.S. this week?
 
-   Argentina — crop conditions, FOB offers, export tax policy, currency.
+   Argentina — crop conditions, current FOB offers, export tax policy,
+     currency. State how Argentine origin competes with U.S. in
+     specific destination markets.
 
-   China — import pace, buyer behavior, state reserve activity if relevant.
+   China — import pace vs. prior year, buyer behavior (accelerating,
+     steady, slowing), state reserve activity if relevant. State whether
+     China is a supportive or neutral factor for U.S. export pace.
 
    EU / Black Sea — FOB offers, export pace, any logistical or policy
-     developments affecting wheat or corn out of the region.
+     developments. Focus on wheat competition to North Africa and Middle
+     East; corn competition to EU feed markets.
 
    Other Regions — any other origin or destination that moved markets this
-     week (e.g. India, Ukraine, Mexico, Middle East buyers).
+     week (India, Ukraine, Mexico, Middle East import tenders).
 
-   So What — one paragraph stating which origin is winning global market share
-     this week and what U.S. exporters must do to remain competitive.
+   So What — one paragraph of 5–7 sentences. Name the one or two origins
+     currently winning global market share and why. Address exporters
+     specifically: which markets remain viable for U.S. origin, what
+     price level or spread adjustment would restore competitiveness, and
+     what forward-booking strategy is appropriate given current spreads.
 
 7. Key Fundamentals & Reports
 
@@ -3156,79 +3525,118 @@ SECTION DETAIL — write each section exactly as specified below.
    CFTC Positioning — cross-commodity summary of managed money positioning
      changes this week; identify where the positioning risk is most acute.
 
-   So What — one paragraph on what this week's government data collectively
-     signals about demand pace and supply management.
+   So What — one paragraph of 5–7 sentences on what this week's government
+     data collectively signals. Address the demand pace vs. USDA's annual
+     target: are inspections and sales running ahead of, in line with, or
+     behind the pace required to meet the USDA forecast? State the
+     implication for the next WASDE revision risk (higher, lower, or
+     unchanged ending stocks). Name which operator type should act on this.
 
 8. International Reports
 
-   One paragraph per region covering any official government or trade-body
-   crop estimates, export data, or policy announcements released this week.
+   One paragraph of 4–6 sentences per region, covering official government
+   or trade-body crop estimates, export data, or policy announcements
+   released this week. For each region, state the specific figure, compare
+   it to USDA's current estimate, and explain the implication.
 
-   Brazil — CONAB, ABIOVE, ANEC, or Mato Grosso state ag data.
+   Brazil — CONAB, ABIOVE, ANEC, or Mato Grosso state ag data. State the
+     specific estimate and the gap vs. USDA. Explain the direction of
+     revision risk for the next WASDE.
 
-   Argentina — BCBA, Rosario Exchange, or government export data.
+   Argentina — BCBA, Rosario Exchange, or government export data. Same
+     structure: specific figure, USDA gap, revision risk direction.
 
-   China — CNGOIC, customs data, or state reserve announcements.
+   China — CNGOIC, customs data, or state reserve announcements. Focus on
+     what the data implies for import demand trajectory.
 
    EU / Black Sea — EU Commission export licenses, IGC estimates, or
-     Russian/Ukrainian ag ministry data.
+     Russian/Ukrainian ag ministry data. Focus on what is new vs. prior week.
 
-   So What — one paragraph on what the international data changes about the
-     global supply picture relative to the USDA balance sheet.
+   So What — one paragraph of 4–6 sentences on what the international data
+     changes about the global supply picture relative to the USDA balance
+     sheet. State the net revision risk direction (will world stocks likely
+     go higher or lower in the next WASDE?) and which commodity is most
+     exposed to revision.
 
 9. Weather & Crop Conditions
 
-   One paragraph per region. Use USDA Crop Progress ratings directly.
+   One paragraph of 5–7 sentences per region. For each region, state the
+   current condition data, compare it to prior week and prior year, and
+   explain the market implication. Do not stop at reporting the rating —
+   explain what it means for production potential and price.
 
    United States — current winter wheat condition ratings (good/excellent
      percent, poor/very poor percent, week-over-week change, year-over-year
-     comparison); soil moisture; planting progress where relevant; 7-14 day
-     forecast and its market implication.
+     comparison); soil moisture by state; planting progress where relevant;
+     7-14 day forecast. State specifically: what rating threshold, if
+     breached, would attract weather-premium buying?
 
    Brazil — soybean harvest percent complete vs. last year and 5-year average;
-     safrinha corn planting percent complete; any weather risks.
+     quality reports from key producing states; safrinha corn planting percent
+     complete and condition; identify the next weather risk window and when
+     it opens.
 
-   Argentina — crop condition ratings for corn and soybeans; recent rainfall
-     or dryness events; harvest progress; yield estimate revisions.
+   Argentina — crop condition ratings for corn and soybeans with
+     week-over-week and year-over-year comparisons; recent rainfall or
+     dryness events with millimeter data; harvest progress; any revision to
+     yield estimates from consultancy or exchange sources.
 
    Global — any other weather development with a market-moving implication
-     (Black Sea, EU, Australia, India).
+     (Black Sea, EU winter wheat, Australia, India). If none, state that
+     no weather risk outside the Americas is market-relevant this week.
 
-   So What — one paragraph on which weather risk, if it materializes, would
-     have the largest price impact, and what threshold to watch for.
+   So What — one paragraph of 5–7 sentences. Rank the weather risks by
+     potential price impact. Name the specific region and threshold (e.g.
+     'Kansas good/excellent below 38 percent nationally by April 1') that
+     would produce a measurable price response. State what commercial
+     operators should be monitoring and at what frequency.
 
 10. Synthesis & Outlook
 
     This section must contain the following paragraphs in this exact order.
     Do not combine paragraphs. Do not add extra paragraphs.
+    Each paragraph must be 6–8 sentences except where noted.
 
-    Introduction — one paragraph tying together the week's dominant theme.
-      Open with a sentence that references a specific data point or event
-      from this week that no prior report could have contained.
+    Introduction — one paragraph of 6–8 sentences tying together the week's
+      dominant theme. REQUIRED: open with a sentence referencing a specific
+      data point or event from this week that no prior report could have
+      contained. Then state what that fact reveals about the structural
+      condition of the market — not just what happened, but what it means.
+      Connect the three commodities into a single overarching narrative.
 
-    Corn Outlook — one paragraph. State the base-case price range for the
-      front month and the next major contract. Name the one most important
-      factor that will determine whether prices break the range up or down.
+    Corn Outlook — one paragraph of 6–8 sentences. State the base-case price
+      range for the front month and the next major contract with specific
+      price levels. Define the upper and lower bounds with specific factors
+      (not just 'bullish/bearish'). Name the single most important variable
+      that will determine direction over the next two to three weeks and
+      explain why it is the deciding factor.
 
-    Soybean Outlook — one paragraph. Same format as Corn Outlook.
+    Soybean Outlook — one paragraph of 6–8 sentences. Same format.
+      Include the crush margin dynamic if it is relevant to the price range.
 
-    Wheat Outlook — one paragraph. Same format as Corn Outlook.
+    Wheat Outlook — one paragraph of 6–8 sentences. Same format.
+      Address both SRW and HRW if they are diverging structurally.
 
-    Bullish Triggers — one paragraph naming at least three specific,
-      data-grounded events or thresholds that would push prices materially
-      higher. These must be specific — not 'weather risk' but 'Kansas
-      good/excellent below 35 percent by April 1'.
+    Bullish Triggers — one paragraph of 6–8 sentences naming at least three
+      specific, data-grounded events or thresholds that would push prices
+      materially higher. Each trigger must be specific and measurable —
+      not 'weather risk' but 'Kansas good/excellent below 38 percent
+      nationally by April 1 with Kansas topsoil adequate below 30 percent'.
+      Explain the mechanism: why each trigger would produce a price rally.
 
-    Bearish Triggers — one paragraph naming at least three specific,
-      data-grounded events or thresholds that would push prices lower.
+    Bearish Triggers — one paragraph of 6–8 sentences naming at least three
+      specific, data-grounded events or thresholds that would push prices
+      lower. Same specificity requirement. Explain the mechanism for each.
 
-    Summary — one paragraph delivering a clear, direct verdict on market
-      structure. State the bias (bullish, bearish, or neutral) and why.
-      This paragraph must be written entirely from this week's evidence.
+    Summary — one paragraph of 6–8 sentences delivering a clear, direct
+      verdict on market structure and bias (bullish, bearish, or neutral).
+      This paragraph must be derived entirely from this week's evidence.
+      End with a sentence that tells a commercial operator the most important
+      single action they should take based on this week's collective picture.
 
-    Watchlist — exactly five bullet points. Each bullet must name:
+    Watchlist — exactly five bullet points. Bullets are the ONLY list
+      permitted in the entire report. Each bullet must name:
       (a) a specific report or event due next week,
-      (b) the specific figure or threshold to watch for in that report,
-      (c) what a bullish vs. bearish outcome would look like.
-      Bullets are the only place in the report where a list is permitted.
+      (b) the specific figure or threshold to watch for,
+      (c) what a bullish vs. bearish outcome would look like in concrete terms.
 
